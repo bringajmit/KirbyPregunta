@@ -1,0 +1,69 @@
+{{>headerLogin}}
+<main class="h-[100vh] flex items-center justify-center">
+
+    {{#perfil}}
+        <div class="relative rounded-2xl p-6 bg-[#1C1919] bg-opacity-80  lg:w-[1137px] h-[700px] flex justify-center
+        items-center flex-col">
+            <img class="absolute -top-8 -right-8 md:-right-20 lg:top-0 lg:-right-16 w-[90px] h-[90px] md:w-[150px] md:h-[150px]"
+                 src="/public/img/kirbyRegistro.png" alt="kirbyRegistro">
+            <form class="text-white font-light h-full tracking-[0.06em] text-[15px] flex flex-col items-center justify-between" action="/user/modificadoCompleto"
+                  method="POST" enctype="multipart/form-data">
+                <h2 class="mb-2 lg:mb-6 tracking-[0.12em] text-white font-semibold text-[15px] md:text-[20px] uppercase">
+                    Modificar perfil</h2>
+                <div class="grid lg:grid-cols-2 gap-y-2 lg:gap-y-6  gap-x-24">
+                    <input class="w-[280px] h-[32.88px] lg:w-[430px] lg:h-[47px] rounded-xl p-2 outline-0 bg-[#252121] bg-opacity-80"
+                           type="text" name="nombre" id="nombre" value="{{nombre}}" required>
+
+
+                    <input class="w-[280px] h-[32.88px] lg:w-[430px] lg:h-[47px] rounded-xl p-2 outline-0 bg-[#252121] bg-opacity-80"
+                           type="date" name="fecha_nacimiento"
+                           id="fecha_nacimiento" placeholder="Fecha de nacimiento" value="{{fecha_nacimiento}}"
+                           required>
+
+                    <select class="w-[280px] h-[32.88px] lg:w-[430px] lg:h-[47px] rounded-xl p-2 outline-0 bg-[#252121] bg-opacity-80 bg-"
+                            name="sexo" id="sexo" required>
+                        <option value="" disabled selected hidden>{{sexo}}</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Prefiero no cargarlo">Prefiero no cargarlo</option>
+                    </select>
+
+                    <input class="w-[280px] h-[32.88px] lg:w-[430px] lg:h-[47px] rounded-xl p-2 outline-0 bg-[#252121] bg-opacity-80"
+                           type="text" name="pais" id="pais" value="{{pais}}" required>
+
+
+                    <input class="w-[280px] h-[32.88px] lg:w-[430px] lg:h-[47px] rounded-xl p-2 outline-0 bg-[#252121] bg-opacity-80"
+                         type="text" name="ciudad" id="ciudad" value="{{ciudad}} " readonly
+                           required>
+
+
+
+                    <input class="w-[280px] h-[32.88px] lg:w-[430px] lg:h-[47px] rounded-xl p-2 outline-0 bg-[#252121] bg-opacity-80"
+                           type="password" name="register_password" id="password"
+                           placeholder="Password" required>
+
+                    <input class="w-[280px] h-[32.88px] lg:w-[430px] lg:h-[47px] rounded-xl p-2 outline-0 bg-[#252121] bg-opacity-80"
+                           type="password" name="repetir_password"
+                           id="repetir_password" placeholder="Repetir Password" required>
+
+                    <input class="w-[280px] h-[45px] lg:w-[430px] lg:h-[47px] rounded-xl p-2 outline-0 bg-[#252121] bg-opacity-80"
+                           type="file" name="img_profile"
+                           id="img_profile">
+                    <div class="w-[280px] h-[150px] md:h-[200px] md:w-[430px]" id="map"></div>
+
+                </div>
+
+                <div class="my-2 lg:my-6 flex justify-center items-center">
+                    <button class=" w-[159px] h-[40px] rounded-2xl bg-[#252121] bg-opacity-80 font-normal text-[12px] lg:text-[16px] uppercase"
+                            type="submit" name="actualizar">Actualizar
+                    </button>
+                </div>
+            </form>
+
+        </div>
+
+
+    {{/perfil}}
+
+</main>
+{{> footer}}

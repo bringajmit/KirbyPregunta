@@ -1,0 +1,260 @@
+[2023-07-01][INFO]Ejecutando query: SELECT id as id_usuario FROM usuario WHERE username='admin'
+[2023-07-01][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-07-01][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-07-01][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-07-01][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-07-01][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: SELECT id_nivel FROM usuario WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: SELECT p.id, p.descripcion
+                FROM pregunta p
+                LEFT JOIN preguntas_contestadas AS pc ON p.id = pc.id_pregunta AND pc.id_usuario = '1'
+                WHERE pc.id_pregunta IS NULL and p.id_nivel='2' and p.aprobada=true
+                order by RAND() LIMIT 1
+[2023-07-01][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='22' and es_correcta=TRUE
+[2023-07-01][INFO]Ejecutando query: UPDATE usuario SET cant_preguntas= cant_preguntas+1 WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: UPDATE pregunta SET cant_presentaciones=cant_presentaciones+1 WHERE id='22'
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='22'
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='22'
+[2023-07-01][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='22'
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='22'
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='22'
+[2023-07-01][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='22'
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='22'
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='22'
+[2023-07-01][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='22'
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='22'
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='22'
+[2023-07-01][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='22'
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='22'
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='22'
+[2023-07-01][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='22'
+[2023-07-01][INFO]Ejecutando query: UPDATE usuario SET porcentaje_aciertos=aciertos/cant_preguntas*100 WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM usuario WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: UPDATE usuario SET id_nivel= 2 WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: UPDATE pregunta SET porcentaje_aciertos=aciertos/cant_presentaciones*100 WHERE id='22'
+[2023-07-01][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM pregunta WHERE id='22'
+[2023-07-01][INFO]Ejecutando query: UPDATE pregunta SET id_nivel= 3 WHERE id='22'
+[2023-07-01][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='22' and es_correcta=TRUE
+[2023-07-01][INFO]Ejecutando query: SELECT p.puntaje 
+               FROM partida p
+                    WHERE p.id_usuario='1'
+                 ORDER BY p.id DESC LIMIT 1
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='22'
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='22'
+[2023-07-01][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-07-01][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-07-01][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-07-01][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-07-01][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: SELECT id_nivel FROM usuario WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: SELECT p.id, p.descripcion
+                FROM pregunta p
+                LEFT JOIN preguntas_contestadas AS pc ON p.id = pc.id_pregunta AND pc.id_usuario = '1'
+                WHERE pc.id_pregunta IS NULL and p.id_nivel='2' and p.aprobada=true
+                order by RAND() LIMIT 1
+[2023-07-01][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='25' and es_correcta=TRUE
+[2023-07-01][INFO]Ejecutando query: UPDATE usuario SET cant_preguntas= cant_preguntas+1 WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: UPDATE pregunta SET cant_presentaciones=cant_presentaciones+1 WHERE id='25'
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='25'
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='25'
+[2023-07-01][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='25'
+[2023-07-01][INFO]Ejecutando query: UPDATE usuario SET aciertos= aciertos+1 WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: UPDATE pregunta SET aciertos=aciertos+1 WHERE id='25'
+[2023-07-01][INFO]Ejecutando query: UPDATE usuario SET puntaje_final= puntaje_final+1 WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: UPDATE usuario SET porcentaje_aciertos=aciertos/cant_preguntas*100 WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM usuario WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: UPDATE usuario SET id_nivel= 2 WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: UPDATE partida SET puntaje= puntaje+1 WHERE id='12'
+[2023-07-01][INFO]Ejecutando query: UPDATE pregunta SET porcentaje_aciertos=aciertos/cant_presentaciones*100 WHERE id='25'
+[2023-07-01][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM pregunta WHERE id='25'
+[2023-07-01][INFO]Ejecutando query: UPDATE pregunta SET id_nivel= 1 WHERE id='25'
+[2023-07-01][INFO]Ejecutando query: SELECT p.puntaje 
+               FROM partida p
+                    WHERE p.id_usuario='1'
+                 ORDER BY p.id DESC LIMIT 1
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='25'
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='25'
+[2023-07-01][INFO]Ejecutando query: SELECT id_nivel FROM usuario WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: SELECT p.id, p.descripcion
+                FROM pregunta p
+                LEFT JOIN preguntas_contestadas AS pc ON p.id = pc.id_pregunta AND pc.id_usuario = '1'
+                WHERE pc.id_pregunta IS NULL and p.id_nivel='2' and p.aprobada=true
+                order by RAND() LIMIT 1
+[2023-07-01][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='19' and es_correcta=TRUE
+[2023-07-01][INFO]Ejecutando query: UPDATE usuario SET cant_preguntas= cant_preguntas+1 WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: UPDATE pregunta SET cant_presentaciones=cant_presentaciones+1 WHERE id='19'
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='19'
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='19'
+[2023-07-01][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='19'
+[2023-07-01][INFO]Ejecutando query: UPDATE usuario SET aciertos= aciertos+1 WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: UPDATE pregunta SET aciertos=aciertos+1 WHERE id='19'
+[2023-07-01][INFO]Ejecutando query: UPDATE usuario SET puntaje_final= puntaje_final+1 WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: UPDATE usuario SET porcentaje_aciertos=aciertos/cant_preguntas*100 WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM usuario WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: UPDATE usuario SET id_nivel= 2 WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: UPDATE partida SET puntaje= puntaje+1 WHERE id='12'
+[2023-07-01][INFO]Ejecutando query: UPDATE pregunta SET porcentaje_aciertos=aciertos/cant_presentaciones*100 WHERE id='19'
+[2023-07-01][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM pregunta WHERE id='19'
+[2023-07-01][INFO]Ejecutando query: UPDATE pregunta SET id_nivel= 1 WHERE id='19'
+[2023-07-01][INFO]Ejecutando query: SELECT p.puntaje 
+               FROM partida p
+                    WHERE p.id_usuario='1'
+                 ORDER BY p.id DESC LIMIT 1
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='19'
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='19'
+[2023-07-01][INFO]Ejecutando query: SELECT id_nivel FROM usuario WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: SELECT p.id, p.descripcion
+                FROM pregunta p
+                LEFT JOIN preguntas_contestadas AS pc ON p.id = pc.id_pregunta AND pc.id_usuario = '1'
+                WHERE pc.id_pregunta IS NULL and p.id_nivel='2' and p.aprobada=true
+                order by RAND() LIMIT 1
+[2023-07-01][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='9' and es_correcta=TRUE
+[2023-07-01][INFO]Ejecutando query: UPDATE usuario SET cant_preguntas= cant_preguntas+1 WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: UPDATE pregunta SET cant_presentaciones=cant_presentaciones+1 WHERE id='9'
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='9'
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='9'
+[2023-07-01][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='9'
+[2023-07-01][INFO]Ejecutando query: UPDATE usuario SET porcentaje_aciertos=aciertos/cant_preguntas*100 WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM usuario WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: UPDATE usuario SET id_nivel= 2 WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: UPDATE pregunta SET porcentaje_aciertos=aciertos/cant_presentaciones*100 WHERE id='9'
+[2023-07-01][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM pregunta WHERE id='9'
+[2023-07-01][INFO]Ejecutando query: UPDATE pregunta SET id_nivel= 3 WHERE id='9'
+[2023-07-01][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='9' and es_correcta=TRUE
+[2023-07-01][INFO]Ejecutando query: SELECT p.puntaje 
+               FROM partida p
+                    WHERE p.id_usuario='1'
+                 ORDER BY p.id DESC LIMIT 1
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='9'
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='9'
+[2023-07-01][INFO]Ejecutando query: SELECT id_nivel FROM usuario WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: SELECT p.id, p.descripcion
+                FROM pregunta p
+                LEFT JOIN preguntas_contestadas AS pc ON p.id = pc.id_pregunta AND pc.id_usuario = '1'
+                WHERE pc.id_pregunta IS NULL and p.id_nivel='2' and p.aprobada=true
+                order by RAND() LIMIT 1
+[2023-07-01][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='14' and es_correcta=TRUE
+[2023-07-01][INFO]Ejecutando query: UPDATE usuario SET cant_preguntas= cant_preguntas+1 WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: UPDATE pregunta SET cant_presentaciones=cant_presentaciones+1 WHERE id='14'
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='14'
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='14'
+[2023-07-01][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='14'
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='14'
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='14'
+[2023-07-01][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='14'
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='14'
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='14'
+[2023-07-01][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='14'
+[2023-07-01][INFO]Ejecutando query: UPDATE usuario SET porcentaje_aciertos=aciertos/cant_preguntas*100 WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM usuario WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: UPDATE usuario SET id_nivel= 2 WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: UPDATE pregunta SET porcentaje_aciertos=aciertos/cant_presentaciones*100 WHERE id='14'
+[2023-07-01][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM pregunta WHERE id='14'
+[2023-07-01][INFO]Ejecutando query: UPDATE pregunta SET id_nivel= 3 WHERE id='14'
+[2023-07-01][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='14' and es_correcta=TRUE
+[2023-07-01][INFO]Ejecutando query: SELECT p.puntaje 
+               FROM partida p
+                    WHERE p.id_usuario='1'
+                 ORDER BY p.id DESC LIMIT 1
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='14'
+[2023-07-01][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='14'
+[2023-07-01][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-07-01][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-07-01][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-07-01][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-07-01][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-07-01][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'

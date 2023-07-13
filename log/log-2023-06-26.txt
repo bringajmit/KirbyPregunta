@@ -1,0 +1,2275 @@
+[2023-06-26][INFO]Ejecutando query: SELECT id as id_usuario FROM usuario WHERE username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_nivel FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.id, p.descripcion
+                FROM pregunta p
+                LEFT JOIN preguntas_contestadas AS pc ON p.id = pc.id_pregunta AND pc.id_usuario = '1'
+                WHERE pc.id_pregunta IS NULL and p.id_nivel='1' and p.aprobada=true
+                order by RAND() LIMIT 1
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET cant_preguntas= cant_preguntas+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET cant_presentaciones=cant_presentaciones+1 WHERE id='66'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='66'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='66'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='66'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='66' and es_correcta=TRUE
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET aciertos= aciertos+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET aciertos=aciertos+1 WHERE id='66'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET puntaje_final= puntaje_final+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET porcentaje_aciertos=aciertos/cant_preguntas*100 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET id_nivel= 3 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE partida SET puntaje= puntaje+1 WHERE id='5'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET porcentaje_aciertos=aciertos/cant_presentaciones*100 WHERE id='66'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM pregunta WHERE id='66'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET id_nivel= 1 WHERE id='66'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+               FROM partida p
+                    WHERE p.id_usuario='1'
+                 ORDER BY p.id DESC LIMIT 1
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='66'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='66'
+[2023-06-26][INFO]Ejecutando query: SELECT id_nivel FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.id, p.descripcion
+                FROM pregunta p
+                LEFT JOIN preguntas_contestadas AS pc ON p.id = pc.id_pregunta AND pc.id_usuario = '1'
+                WHERE pc.id_pregunta IS NULL and p.id_nivel='3' and p.aprobada=true
+                order by RAND() LIMIT 1
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET cant_preguntas= cant_preguntas+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET cant_presentaciones=cant_presentaciones+1 WHERE id='52'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='52'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='52'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='52'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='52' and es_correcta=TRUE
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET aciertos= aciertos+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET aciertos=aciertos+1 WHERE id='52'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET puntaje_final= puntaje_final+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET porcentaje_aciertos=aciertos/cant_preguntas*100 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET id_nivel= 3 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE partida SET puntaje= puntaje+1 WHERE id='5'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET porcentaje_aciertos=aciertos/cant_presentaciones*100 WHERE id='52'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM pregunta WHERE id='52'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET id_nivel= 1 WHERE id='52'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+               FROM partida p
+                    WHERE p.id_usuario='1'
+                 ORDER BY p.id DESC LIMIT 1
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='52'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='52'
+[2023-06-26][INFO]Ejecutando query: SELECT id_nivel FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.id, p.descripcion
+                FROM pregunta p
+                LEFT JOIN preguntas_contestadas AS pc ON p.id = pc.id_pregunta AND pc.id_usuario = '1'
+                WHERE pc.id_pregunta IS NULL and p.id_nivel='3' and p.aprobada=true
+                order by RAND() LIMIT 1
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET cant_preguntas= cant_preguntas+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET cant_presentaciones=cant_presentaciones+1 WHERE id='26'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='26'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='26'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='26'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='26' and es_correcta=TRUE
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta
+                    SET reportada=1 WHERE id='26'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET porcentaje_aciertos=aciertos/cant_preguntas*100 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET id_nivel= 2 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET porcentaje_aciertos=aciertos/cant_presentaciones*100 WHERE id='26'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM pregunta WHERE id='26'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET id_nivel= 3 WHERE id='26'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='26' and es_correcta=TRUE
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+               FROM partida p
+                    WHERE p.id_usuario='1'
+                 ORDER BY p.id DESC LIMIT 1
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='26'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='26'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id as id_usuario FROM usuario WHERE username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.id as id, c.descripcion as cDescripcion, n.descripcion as nDescripcion, 
+                p.descripcion as pDescripcion, p.aciertos as aciertos, p.cant_presentaciones as cantPresentaciones, 
+                    p.porcentaje_aciertos as porcentajeAciertos, p.fecha as fecha 
+                FROM pregunta p JOIN categoria C ON p.id_cat=c.id
+                    JOIN nivel n on p.id_nivel=n.id
+                where aprobada=1
+                    ORDER BY p.id
+[2023-06-26][INFO]Ejecutando query: SELECT count(*) as contador
+                    FROM pregunta p
+                        WHERE aprobada=1
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje as puntaje, p.fecha as fecha, u.username as username, p.id as id
+                FROM partida p JOIN usuario u ON p.id_usuario=u.id
+[2023-06-26][INFO]Ejecutando query: SELECT COUNT(*) as contador
+                FROM partida
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id as id_usuario FROM usuario WHERE username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='2'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='2' AND d.aceptado=false AND u.id!='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT pregunta.descripcion as pregunta, pregunta.id as id, 
+       GROUP_CONCAT(CONCAT_WS('<br>', opcion.descripcion) SEPARATOR '<br>') AS datos_opcion,
+        GROUP_CONCAT( IF(opcion.es_correcta = 1, CONCAT_WS('<br>', opcion.descripcion), NULL) SEPARATOR '<br>' ) AS correcta,
+        c.descripcion as categoria
+        FROM categoria c JOIN pregunta ON pregunta.id_cat=c.id
+        LEFT JOIN opcion ON pregunta.id = opcion.pregunta_id
+        WHERE pregunta.aprobada = 0 GROUP BY pregunta.id;
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='2'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='2' AND d.aceptado=false AND u.id!='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id, descripcion 
+                    FROM categoria
+[2023-06-26][INFO]Ejecutando query: SELECT id as id, descripcion as descripcion 
+                    FROM nivel
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='2'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='2' AND d.aceptado=false AND u.id!='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id, descripcion 
+                    FROM categoria
+[2023-06-26][INFO]Ejecutando query: SELECT id as id, descripcion as descripcion 
+                    FROM nivel
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id, descripcion 
+                    FROM categoria
+[2023-06-26][INFO]Ejecutando query: SELECT id as id, descripcion as descripcion 
+                    FROM nivel
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id, descripcion
+                    FROM pregunta
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT pregunta.descripcion as pregunta, pregunta.id as id, 
+       GROUP_CONCAT(CONCAT_WS('<br>', opcion.descripcion) SEPARATOR '<br>') AS datos_opcion,
+        GROUP_CONCAT( IF(opcion.es_correcta = 1, CONCAT_WS('<br>', opcion.descripcion), NULL) SEPARATOR '<br>' ) AS correcta,
+        c.descripcion as categoria
+        FROM categoria c JOIN pregunta ON pregunta.id_cat=c.id
+        LEFT JOIN opcion ON pregunta.id = opcion.pregunta_id
+        WHERE pregunta.aprobada = 0 GROUP BY pregunta.id;
+[2023-06-26][INFO]Ejecutando query: SELECT id, descripcion 
+                    FROM categoria
+[2023-06-26][INFO]Ejecutando query: SELECT id, descripcion 
+                    FROM categoria
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT pregunta.descripcion as pregunta, pregunta.id as id, 
+                GROUP_CONCAT(CONCAT_WS('<br>', opcion.descripcion) SEPARATOR '<br>') AS datos_opcion
+                    FROM pregunta LEFT JOIN opcion ON pregunta.id = opcion.pregunta_id
+                        WHERE pregunta.reportada = true 
+                                GROUP BY pregunta.id;
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT pregunta.descripcion as pregunta, pregunta.id as id, 
+                GROUP_CONCAT(CONCAT_WS('<br>', opcion.descripcion) SEPARATOR '<br>') AS datos_opcion
+                    FROM pregunta LEFT JOIN opcion ON pregunta.id = opcion.pregunta_id
+                        WHERE pregunta.reportada = true 
+                                GROUP BY pregunta.id;
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id as id_usuario FROM usuario WHERE username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje as puntaje, p.fecha as fecha, u.username as username, p.id as id
+                FROM partida p JOIN usuario u ON p.id_usuario=u.id
+[2023-06-26][INFO]Ejecutando query: SELECT COUNT(*) as contador
+                FROM partida
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje as puntaje, p.fecha as fecha, u.username as username, p.id as id
+                FROM partida p JOIN usuario u ON p.id_usuario=u.id
+[2023-06-26][INFO]Ejecutando query: SELECT COUNT(*) as contador
+                FROM partida
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT username, nombre, fecha_ingreso ,
+                  FLOOR(DATEDIFF(CURDATE(), fecha_nacimiento) / 365) AS edad, pais, porcentaje_aciertos, sexo
+                    FROM usuario
+[2023-06-26][INFO]Ejecutando query: SELECT COUNT(id) as contador
+                    FROM usuario
+[2023-06-26][INFO]Ejecutando query: SELECT COUNT(id) as contador
+                    FROM usuario
+                    WHERE datediff(CURDATE(),fecha_ingreso)<32 
+[2023-06-26][INFO]Ejecutando query: SELECT DISTINCT pais
+                FROM usuario
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_nivel FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.id, p.descripcion
+                FROM pregunta p
+                LEFT JOIN preguntas_contestadas AS pc ON p.id = pc.id_pregunta AND pc.id_usuario = '1'
+                WHERE pc.id_pregunta IS NULL and p.id_nivel='1' and p.aprobada=true
+                order by RAND() LIMIT 1
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET cant_preguntas= cant_preguntas+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET cant_presentaciones=cant_presentaciones+1 WHERE id='27'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='27'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='27'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='27'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='27' and es_correcta=TRUE
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET aciertos= aciertos+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET aciertos=aciertos+1 WHERE id='27'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET puntaje_final= puntaje_final+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET porcentaje_aciertos=aciertos/cant_preguntas*100 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET id_nivel= 3 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE partida SET puntaje= puntaje+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET porcentaje_aciertos=aciertos/cant_presentaciones*100 WHERE id='27'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM pregunta WHERE id='27'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET id_nivel= 1 WHERE id='27'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+               FROM partida p
+                    WHERE p.id_usuario='1'
+                 ORDER BY p.id DESC LIMIT 1
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='27'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='27'
+[2023-06-26][INFO]Ejecutando query: SELECT id_nivel FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.id, p.descripcion
+                FROM pregunta p
+                LEFT JOIN preguntas_contestadas AS pc ON p.id = pc.id_pregunta AND pc.id_usuario = '1'
+                WHERE pc.id_pregunta IS NULL and p.id_nivel='3' and p.aprobada=true
+                order by RAND() LIMIT 1
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET cant_preguntas= cant_preguntas+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET cant_presentaciones=cant_presentaciones+1 WHERE id='16'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='16'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='16'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='16'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='16' and es_correcta=TRUE
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET aciertos= aciertos+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET aciertos=aciertos+1 WHERE id='16'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET puntaje_final= puntaje_final+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET porcentaje_aciertos=aciertos/cant_preguntas*100 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET id_nivel= 3 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE partida SET puntaje= puntaje+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET porcentaje_aciertos=aciertos/cant_presentaciones*100 WHERE id='16'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM pregunta WHERE id='16'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET id_nivel= 1 WHERE id='16'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+               FROM partida p
+                    WHERE p.id_usuario='1'
+                 ORDER BY p.id DESC LIMIT 1
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='16'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='16'
+[2023-06-26][INFO]Ejecutando query: SELECT id_nivel FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.id, p.descripcion
+                FROM pregunta p
+                LEFT JOIN preguntas_contestadas AS pc ON p.id = pc.id_pregunta AND pc.id_usuario = '1'
+                WHERE pc.id_pregunta IS NULL and p.id_nivel='3' and p.aprobada=true
+                order by RAND() LIMIT 1
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET cant_preguntas= cant_preguntas+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET cant_presentaciones=cant_presentaciones+1 WHERE id='61'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='61'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='61'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='61'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='61' and es_correcta=TRUE
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET aciertos= aciertos+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET aciertos=aciertos+1 WHERE id='61'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET puntaje_final= puntaje_final+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET porcentaje_aciertos=aciertos/cant_preguntas*100 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET id_nivel= 3 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE partida SET puntaje= puntaje+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET porcentaje_aciertos=aciertos/cant_presentaciones*100 WHERE id='61'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM pregunta WHERE id='61'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET id_nivel= 1 WHERE id='61'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+               FROM partida p
+                    WHERE p.id_usuario='1'
+                 ORDER BY p.id DESC LIMIT 1
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='61'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='61'
+[2023-06-26][INFO]Ejecutando query: SELECT id_nivel FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.id, p.descripcion
+                FROM pregunta p
+                LEFT JOIN preguntas_contestadas AS pc ON p.id = pc.id_pregunta AND pc.id_usuario = '1'
+                WHERE pc.id_pregunta IS NULL and p.id_nivel='3' and p.aprobada=true
+                order by RAND() LIMIT 1
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET cant_preguntas= cant_preguntas+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET cant_presentaciones=cant_presentaciones+1 WHERE id='21'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='21'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='21'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='21'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='21' and es_correcta=TRUE
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET aciertos= aciertos+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET aciertos=aciertos+1 WHERE id='21'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET puntaje_final= puntaje_final+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET porcentaje_aciertos=aciertos/cant_preguntas*100 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET id_nivel= 3 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE partida SET puntaje= puntaje+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET porcentaje_aciertos=aciertos/cant_presentaciones*100 WHERE id='21'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM pregunta WHERE id='21'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET id_nivel= 1 WHERE id='21'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+               FROM partida p
+                    WHERE p.id_usuario='1'
+                 ORDER BY p.id DESC LIMIT 1
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='21'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='21'
+[2023-06-26][INFO]Ejecutando query: SELECT id_nivel FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.id, p.descripcion
+                FROM pregunta p
+                LEFT JOIN preguntas_contestadas AS pc ON p.id = pc.id_pregunta AND pc.id_usuario = '1'
+                WHERE pc.id_pregunta IS NULL and p.id_nivel='3' and p.aprobada=true
+                order by RAND() LIMIT 1
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET cant_preguntas= cant_preguntas+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET cant_presentaciones=cant_presentaciones+1 WHERE id='33'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='33'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='33'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='33'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='33' and es_correcta=TRUE
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET aciertos= aciertos+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET aciertos=aciertos+1 WHERE id='33'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET puntaje_final= puntaje_final+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET porcentaje_aciertos=aciertos/cant_preguntas*100 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET id_nivel= 3 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE partida SET puntaje= puntaje+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET porcentaje_aciertos=aciertos/cant_presentaciones*100 WHERE id='33'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM pregunta WHERE id='33'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET id_nivel= 1 WHERE id='33'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+               FROM partida p
+                    WHERE p.id_usuario='1'
+                 ORDER BY p.id DESC LIMIT 1
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='33'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='33'
+[2023-06-26][INFO]Ejecutando query: SELECT id_nivel FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.id, p.descripcion
+                FROM pregunta p
+                LEFT JOIN preguntas_contestadas AS pc ON p.id = pc.id_pregunta AND pc.id_usuario = '1'
+                WHERE pc.id_pregunta IS NULL and p.id_nivel='3' and p.aprobada=true
+                order by RAND() LIMIT 1
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET cant_preguntas= cant_preguntas+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET cant_presentaciones=cant_presentaciones+1 WHERE id='41'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='41'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='41'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='41'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='41' and es_correcta=TRUE
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET aciertos= aciertos+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET aciertos=aciertos+1 WHERE id='41'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET puntaje_final= puntaje_final+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET porcentaje_aciertos=aciertos/cant_preguntas*100 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET id_nivel= 3 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE partida SET puntaje= puntaje+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET porcentaje_aciertos=aciertos/cant_presentaciones*100 WHERE id='41'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM pregunta WHERE id='41'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET id_nivel= 1 WHERE id='41'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+               FROM partida p
+                    WHERE p.id_usuario='1'
+                 ORDER BY p.id DESC LIMIT 1
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='41'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='41'
+[2023-06-26][INFO]Ejecutando query: SELECT id_nivel FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.id, p.descripcion
+                FROM pregunta p
+                LEFT JOIN preguntas_contestadas AS pc ON p.id = pc.id_pregunta AND pc.id_usuario = '1'
+                WHERE pc.id_pregunta IS NULL and p.id_nivel='3' and p.aprobada=true
+                order by RAND() LIMIT 1
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET cant_preguntas= cant_preguntas+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET cant_presentaciones=cant_presentaciones+1 WHERE id='43'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='43'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='43'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='43'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='43' and es_correcta=TRUE
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET aciertos= aciertos+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET aciertos=aciertos+1 WHERE id='43'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET puntaje_final= puntaje_final+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET porcentaje_aciertos=aciertos/cant_preguntas*100 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET id_nivel= 3 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE partida SET puntaje= puntaje+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET porcentaje_aciertos=aciertos/cant_presentaciones*100 WHERE id='43'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM pregunta WHERE id='43'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET id_nivel= 1 WHERE id='43'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+               FROM partida p
+                    WHERE p.id_usuario='1'
+                 ORDER BY p.id DESC LIMIT 1
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='43'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='43'
+[2023-06-26][INFO]Ejecutando query: SELECT id_nivel FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.id, p.descripcion
+                FROM pregunta p
+                LEFT JOIN preguntas_contestadas AS pc ON p.id = pc.id_pregunta AND pc.id_usuario = '1'
+                WHERE pc.id_pregunta IS NULL and p.id_nivel='3' and p.aprobada=true
+                order by RAND() LIMIT 1
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET cant_preguntas= cant_preguntas+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET cant_presentaciones=cant_presentaciones+1 WHERE id='26'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='26'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='26'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='26'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='26' and es_correcta=TRUE
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET aciertos= aciertos+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET aciertos=aciertos+1 WHERE id='26'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET puntaje_final= puntaje_final+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET porcentaje_aciertos=aciertos/cant_preguntas*100 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET id_nivel= 3 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE partida SET puntaje= puntaje+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET porcentaje_aciertos=aciertos/cant_presentaciones*100 WHERE id='26'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM pregunta WHERE id='26'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET id_nivel= 1 WHERE id='26'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+               FROM partida p
+                    WHERE p.id_usuario='1'
+                 ORDER BY p.id DESC LIMIT 1
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='26'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='26'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_nivel FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.id, p.descripcion
+                FROM pregunta p
+                LEFT JOIN preguntas_contestadas AS pc ON p.id = pc.id_pregunta AND pc.id_usuario = '1'
+                WHERE pc.id_pregunta IS NULL and p.id_nivel='3' and p.aprobada=true
+                order by RAND() LIMIT 1
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET cant_preguntas= cant_preguntas+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET cant_presentaciones=cant_presentaciones+1 WHERE id='11'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='11'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='11'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='11'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='11' and es_correcta=TRUE
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET aciertos= aciertos+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET aciertos=aciertos+1 WHERE id='11'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET puntaje_final= puntaje_final+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET porcentaje_aciertos=aciertos/cant_preguntas*100 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET id_nivel= 3 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE partida SET puntaje= puntaje+1 WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET porcentaje_aciertos=aciertos/cant_presentaciones*100 WHERE id='11'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM pregunta WHERE id='11'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET id_nivel= 1 WHERE id='11'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+               FROM partida p
+                    WHERE p.id_usuario='1'
+                 ORDER BY p.id DESC LIMIT 1
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='11'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='11'
+[2023-06-26][INFO]Ejecutando query: SELECT id_nivel FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.id, p.descripcion
+                FROM pregunta p
+                LEFT JOIN preguntas_contestadas AS pc ON p.id = pc.id_pregunta AND pc.id_usuario = '1'
+                WHERE pc.id_pregunta IS NULL and p.id_nivel='3' and p.aprobada=true
+                order by RAND() LIMIT 1
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET cant_preguntas= cant_preguntas+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET cant_presentaciones=cant_presentaciones+1 WHERE id='50'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='50'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='50'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='50'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='50' and es_correcta=TRUE
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET aciertos= aciertos+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET aciertos=aciertos+1 WHERE id='50'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET puntaje_final= puntaje_final+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET porcentaje_aciertos=aciertos/cant_preguntas*100 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET id_nivel= 3 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE partida SET puntaje= puntaje+1 WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET porcentaje_aciertos=aciertos/cant_presentaciones*100 WHERE id='50'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM pregunta WHERE id='50'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET id_nivel= 1 WHERE id='50'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+               FROM partida p
+                    WHERE p.id_usuario='1'
+                 ORDER BY p.id DESC LIMIT 1
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='50'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='50'
+[2023-06-26][INFO]Ejecutando query: SELECT id_nivel FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.id, p.descripcion
+                FROM pregunta p
+                LEFT JOIN preguntas_contestadas AS pc ON p.id = pc.id_pregunta AND pc.id_usuario = '1'
+                WHERE pc.id_pregunta IS NULL and p.id_nivel='3' and p.aprobada=true
+                order by RAND() LIMIT 1
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET cant_preguntas= cant_preguntas+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET cant_presentaciones=cant_presentaciones+1 WHERE id='29'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='29'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='29'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='29'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='29' and es_correcta=TRUE
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET aciertos= aciertos+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET aciertos=aciertos+1 WHERE id='29'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET puntaje_final= puntaje_final+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET porcentaje_aciertos=aciertos/cant_preguntas*100 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET id_nivel= 3 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE partida SET puntaje= puntaje+1 WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET porcentaje_aciertos=aciertos/cant_presentaciones*100 WHERE id='29'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM pregunta WHERE id='29'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET id_nivel= 1 WHERE id='29'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+               FROM partida p
+                    WHERE p.id_usuario='1'
+                 ORDER BY p.id DESC LIMIT 1
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='29'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='29'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT username, nombre, fecha_ingreso ,
+                  FLOOR(DATEDIFF(CURDATE(), fecha_nacimiento) / 365) AS edad, pais, porcentaje_aciertos, sexo
+                    FROM usuario
+[2023-06-26][INFO]Ejecutando query: SELECT COUNT(id) as contador
+                    FROM usuario
+[2023-06-26][INFO]Ejecutando query: SELECT COUNT(id) as contador
+                    FROM usuario
+                    WHERE datediff(CURDATE(),fecha_ingreso)<32 
+[2023-06-26][INFO]Ejecutando query: SELECT DISTINCT pais
+                FROM usuario
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje as puntaje
+            FROM partida p 
+                WHERE p.id_usuario='1'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje as puntaje
+            FROM partida p 
+                WHERE p.id_usuario='1'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje as puntaje
+            FROM partida p 
+                WHERE p.id_usuario='1'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje as puntaje
+            FROM partida p 
+                WHERE p.id_usuario='1'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_nivel FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.id, p.descripcion
+                FROM pregunta p
+                LEFT JOIN preguntas_contestadas AS pc ON p.id = pc.id_pregunta AND pc.id_usuario = '1'
+                WHERE pc.id_pregunta IS NULL and p.id_nivel='3' and p.aprobada=true
+                order by RAND() LIMIT 1
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET cant_preguntas= cant_preguntas+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET cant_presentaciones=cant_presentaciones+1 WHERE id='54'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='54'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='54'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='54'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='54' and es_correcta=TRUE
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET aciertos= aciertos+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET aciertos=aciertos+1 WHERE id='54'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET puntaje_final= puntaje_final+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET porcentaje_aciertos=aciertos/cant_preguntas*100 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET id_nivel= 3 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE partida SET puntaje= puntaje+1 WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET porcentaje_aciertos=aciertos/cant_presentaciones*100 WHERE id='54'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM pregunta WHERE id='54'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET id_nivel= 1 WHERE id='54'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+               FROM partida p
+                    WHERE p.id_usuario='1'
+                 ORDER BY p.id DESC LIMIT 1
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='54'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='54'
+[2023-06-26][INFO]Ejecutando query: SELECT id_nivel FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.id, p.descripcion
+                FROM pregunta p
+                LEFT JOIN preguntas_contestadas AS pc ON p.id = pc.id_pregunta AND pc.id_usuario = '1'
+                WHERE pc.id_pregunta IS NULL and p.id_nivel='3' and p.aprobada=true
+                order by RAND() LIMIT 1
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET cant_preguntas= cant_preguntas+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET cant_presentaciones=cant_presentaciones+1 WHERE id='18'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='18'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='18'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='18'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='18' and es_correcta=TRUE
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET porcentaje_aciertos=aciertos/cant_preguntas*100 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET id_nivel= 3 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET porcentaje_aciertos=aciertos/cant_presentaciones*100 WHERE id='18'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM pregunta WHERE id='18'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET id_nivel= 3 WHERE id='18'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='18' and es_correcta=TRUE
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+               FROM partida p
+                    WHERE p.id_usuario='1'
+                 ORDER BY p.id DESC LIMIT 1
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='18'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='18'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje as puntaje
+            FROM partida p 
+                WHERE p.id_usuario='1'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje as puntaje
+            FROM partida p 
+                WHERE p.id_usuario='1'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT u.username as username, d.ganador as ganador,
+                d.puntaje_retador as puntajeRetador, d.puntaje_rival as puntajeRival
+            FROM usuario u JOIN duelo d ON d.id_retador=u.id or d.id_rival=u.id
+            WHERE u.username!='admin' 
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT count(id) as contador
+            FROM duelo
+            WHERE id_retador='1' or id_rival='1' and aceptado= true
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id FROM usuario WHERE username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_retador FROM duelo WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.id, p.descripcion
+                FROM pregunta p
+                LEFT JOIN preguntas_duelo AS pd ON p.id=pd.id_pregunta
+                WHERE pd.id_pregunta IS NULL and p.aprobada=true
+                order by RAND() LIMIT 1
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='54'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='54'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='54'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='54' and es_correcta=TRUE
+[2023-06-26][INFO]Ejecutando query: SELECT id_retador FROM duelo WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE duelo SET puntaje_retador=puntaje_retador+1 where id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET puntaje_final=puntaje_final+1 WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='54'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='54'
+[2023-06-26][INFO]Ejecutando query: SELECT id_retador FROM duelo WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT puntaje_retador FROM duelo WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_retador FROM duelo WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.id, p.descripcion
+                FROM pregunta p
+                LEFT JOIN preguntas_duelo AS pd ON p.id=pd.id_pregunta
+                WHERE pd.id_pregunta IS NULL and p.aprobada=true
+                order by RAND() LIMIT 1
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='51'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='51'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='51'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='51' and es_correcta=TRUE
+[2023-06-26][INFO]Ejecutando query: SELECT d.puntaje_retador as puntajeRetador, d.puntaje_rival as puntajeRival FROM duelo d WHERE d.id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT username FROM usuario u JOIN duelo d ON d.id_retador=u.id and d.id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT username FROM usuario u JOIN duelo d ON d.id_rival=u.id and d.id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_retador FROM duelo WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id as id_usuario FROM usuario WHERE username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='2'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='2' AND d.aceptado=false AND u.id!='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_retador FROM duelo WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE duelo SET aceptado=true WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.id, p.descripcion
+                FROM pregunta p
+                LEFT JOIN preguntas_duelo AS pd ON p.id=pd.id_pregunta
+                WHERE pd.id_pregunta IS NULL and p.aprobada=true
+                order by RAND() LIMIT 1
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='7'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='7'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='7'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='7' and es_correcta=TRUE
+[2023-06-26][INFO]Ejecutando query: SELECT id_retador FROM duelo WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE duelo SET puntaje_rival=puntaje_rival+1 where id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET puntaje_final=puntaje_final+1 WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='7'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='7'
+[2023-06-26][INFO]Ejecutando query: SELECT id_retador FROM duelo WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT puntaje_rival FROM duelo WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_retador FROM duelo WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE duelo SET aceptado=true WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.id, p.descripcion
+                FROM pregunta p
+                LEFT JOIN preguntas_duelo AS pd ON p.id=pd.id_pregunta
+                WHERE pd.id_pregunta IS NULL and p.aprobada=true
+                order by RAND() LIMIT 1
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='27'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='27'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='27'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='27' and es_correcta=TRUE
+[2023-06-26][INFO]Ejecutando query: SELECT id_retador FROM duelo WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE duelo SET puntaje_rival=puntaje_rival+1 where id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET puntaje_final=puntaje_final+1 WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='27'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='27'
+[2023-06-26][INFO]Ejecutando query: SELECT id_retador FROM duelo WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT puntaje_rival FROM duelo WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_retador FROM duelo WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE duelo SET aceptado=true WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.id, p.descripcion
+                FROM pregunta p
+                LEFT JOIN preguntas_duelo AS pd ON p.id=pd.id_pregunta
+                WHERE pd.id_pregunta IS NULL and p.aprobada=true
+                order by RAND() LIMIT 1
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='40'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='40'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='40'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='40' and es_correcta=TRUE
+[2023-06-26][INFO]Ejecutando query: SELECT d.puntaje_retador as puntajeRetador, d.puntaje_rival as puntajeRival FROM duelo d WHERE d.id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT username FROM usuario u JOIN duelo d ON d.id_retador=u.id and d.id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT username FROM usuario u JOIN duelo d ON d.id_rival=u.id and d.id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_retador FROM duelo WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT d.puntaje_retador as puntajeRetador, d.puntaje_rival as puntajeRival FROM duelo d WHERE d.id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT d.puntaje_retador as puntajeRetador, d.puntaje_rival as puntajeRival FROM duelo d WHERE d.id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT d.puntaje_retador as puntajeRetador, d.puntaje_rival as puntajeRival FROM duelo d WHERE d.id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT d.puntaje_retador as puntajeRetador, d.puntaje_rival as puntajeRival FROM duelo d WHERE d.id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT username FROM usuario u JOIN duelo d ON d.id_rival=u.id and d.id='1'
+[2023-06-26][INFO]Ejecutando query: UPDATE duelo SET ganador='Rayzal' WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='2'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='2' AND d.aceptado=false AND u.id!='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT u.username as username, d.ganador as ganador,
+                d.puntaje_retador as puntajeRetador, d.puntaje_rival as puntajeRival
+            FROM usuario u JOIN duelo d ON d.id_retador=u.id or d.id_rival=u.id
+            WHERE u.username!='Rayzal' 
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT count(id) as contador
+            FROM duelo
+            WHERE id_retador='2' or id_rival='2' and aceptado= true
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='2'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='2' AND d.aceptado=false AND u.id!='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='2'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='2' AND d.aceptado=false AND u.id!='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='2'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='2' AND d.aceptado=false AND u.id!='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='2'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='2' AND d.aceptado=false AND u.id!='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id, descripcion 
+                    FROM categoria
+[2023-06-26][INFO]Ejecutando query: SELECT id as id, descripcion as descripcion 
+                    FROM nivel
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='2'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='2' AND d.aceptado=false AND u.id!='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id, descripcion
+                    FROM pregunta
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT p.descripcion as preguntaD,c.id as idCat,
+                        c.descripcion as categoriaD,n.id as idDificultad, n.descripcion as dificultadD 
+                    FROM pregunta p JOIN categoria c ON p.id_cat=c.id
+                        JOIN nivel n ON p.id_nivel=n.id
+                        WHERE p.id='13'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion, id 
+                    FROM opcion 
+                    WHERE pregunta_id='13' and es_correcta=false
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion, id 
+                    FROM opcion WHERE pregunta_id='13' 
+                                 and  es_correcta = true
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion, id 
+                    FROM opcion 
+                    WHERE pregunta_id='13'
+[2023-06-26][INFO]Ejecutando query: SELECT DISTINCT c.descripcion, c.id 
+                    FROM categoria c JOIN pregunta p ON p.id_cat!=c.id
+[2023-06-26][INFO]Ejecutando query: SELECT DISTINCT n.descripcion, n.id 
+                    FROM nivel n JOIN pregunta p ON p.id_nivel!=n.id
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT p.descripcion as preguntaD,c.id as idCat,
+                        c.descripcion as categoriaD,n.id as idDificultad, n.descripcion as dificultadD 
+                    FROM pregunta p JOIN categoria c ON p.id_cat=c.id
+                        JOIN nivel n ON p.id_nivel=n.id
+                        WHERE p.id='13'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion, id 
+                    FROM opcion 
+                    WHERE pregunta_id='13' and es_correcta=false
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion, id 
+                    FROM opcion WHERE pregunta_id='13' 
+                                 and  es_correcta = true
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion, id 
+                    FROM opcion 
+                    WHERE pregunta_id='13'
+[2023-06-26][INFO]Ejecutando query: SELECT DISTINCT c.descripcion, c.id 
+                    FROM categoria c JOIN pregunta p ON p.id_cat!=c.id
+[2023-06-26][INFO]Ejecutando query: SELECT DISTINCT n.descripcion, n.id 
+                    FROM nivel n JOIN pregunta p ON p.id_nivel!=n.id
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT p.descripcion as preguntaD,c.id as idCat,
+                        c.descripcion as categoriaD,n.id as idDificultad, n.descripcion as dificultadD 
+                    FROM pregunta p JOIN categoria c ON p.id_cat=c.id
+                        JOIN nivel n ON p.id_nivel=n.id
+                        WHERE p.id='13'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion, id 
+                    FROM opcion 
+                    WHERE pregunta_id='13' and es_correcta=false
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion, id 
+                    FROM opcion WHERE pregunta_id='13' 
+                                 and  es_correcta = true
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion, id 
+                    FROM opcion 
+                    WHERE pregunta_id='13'
+[2023-06-26][INFO]Ejecutando query: SELECT DISTINCT c.descripcion, c.id 
+                    FROM categoria c JOIN pregunta p ON p.id_cat!=c.id
+[2023-06-26][INFO]Ejecutando query: SELECT DISTINCT n.descripcion, n.id 
+                    FROM nivel n JOIN pregunta p ON p.id_nivel!=n.id
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT p.descripcion as preguntaD,c.id as idCat,
+                        c.descripcion as categoriaD,n.id as idDificultad, n.descripcion as dificultadD 
+                    FROM pregunta p JOIN categoria c ON p.id_cat=c.id
+                        JOIN nivel n ON p.id_nivel=n.id
+                        WHERE p.id='13'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion, id 
+                    FROM opcion 
+                    WHERE pregunta_id='13' and es_correcta=false
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion, id 
+                    FROM opcion WHERE pregunta_id='13' 
+                                 and  es_correcta = true
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion, id 
+                    FROM opcion 
+                    WHERE pregunta_id='13'
+[2023-06-26][INFO]Ejecutando query: SELECT DISTINCT c.descripcion, c.id 
+                    FROM categoria c JOIN pregunta p ON p.id_cat!=c.id
+[2023-06-26][INFO]Ejecutando query: SELECT DISTINCT n.descripcion, n.id 
+                    FROM nivel n JOIN pregunta p ON p.id_nivel!=n.id
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT p.descripcion as preguntaD,c.id as idCat,
+                        c.descripcion as categoriaD,n.id as idDificultad, n.descripcion as dificultadD 
+                    FROM pregunta p JOIN categoria c ON p.id_cat=c.id
+                        JOIN nivel n ON p.id_nivel=n.id
+                        WHERE p.id='13'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion, id 
+                    FROM opcion 
+                    WHERE pregunta_id='13' and es_correcta=false
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion, id 
+                    FROM opcion WHERE pregunta_id='13' 
+                                 and  es_correcta = true
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion, id 
+                    FROM opcion 
+                    WHERE pregunta_id='13'
+[2023-06-26][INFO]Ejecutando query: SELECT DISTINCT c.descripcion, c.id 
+                    FROM categoria c JOIN pregunta p ON p.id_cat!=c.id
+[2023-06-26][INFO]Ejecutando query: SELECT DISTINCT n.descripcion, n.id 
+                    FROM nivel n JOIN pregunta p ON p.id_nivel!=n.id
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT p.descripcion as preguntaD,c.id as idCat,
+                        c.descripcion as categoriaD,n.id as idDificultad, n.descripcion as dificultadD 
+                    FROM pregunta p JOIN categoria c ON p.id_cat=c.id
+                        JOIN nivel n ON p.id_nivel=n.id
+                        WHERE p.id='13'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion, id 
+                    FROM opcion 
+                    WHERE pregunta_id='13' and es_correcta=false
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion, id 
+                    FROM opcion WHERE pregunta_id='13' 
+                                 and  es_correcta = true
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion, id 
+                    FROM opcion 
+                    WHERE pregunta_id='13'
+[2023-06-26][INFO]Ejecutando query: SELECT DISTINCT c.descripcion, c.id 
+                    FROM categoria c JOIN pregunta p ON p.id_cat!=c.id
+[2023-06-26][INFO]Ejecutando query: SELECT DISTINCT n.descripcion, n.id 
+                    FROM nivel n JOIN pregunta p ON p.id_nivel!=n.id
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id, descripcion
+                    FROM pregunta
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: DELETE FROM opcion WHERE pregunta_id='1'
+[2023-06-26][INFO]Ejecutando query: DELETE FROM pregunta WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id, descripcion
+                    FROM pregunta
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='2'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='2' AND d.aceptado=false AND u.id!='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT pregunta.descripcion as pregunta, pregunta.id as id, 
+       GROUP_CONCAT(CONCAT_WS('<br>', opcion.descripcion) SEPARATOR '<br>') AS datos_opcion,
+        GROUP_CONCAT( IF(opcion.es_correcta = 1, CONCAT_WS('<br>', opcion.descripcion), NULL) SEPARATOR '<br>' ) AS correcta,
+        c.descripcion as categoria
+        FROM categoria c JOIN pregunta ON pregunta.id_cat=c.id
+        LEFT JOIN opcion ON pregunta.id = opcion.pregunta_id
+        WHERE pregunta.aprobada = 0 GROUP BY pregunta.id;
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id, descripcion 
+                    FROM categoria
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='2'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='2' AND d.aceptado=false AND u.id!='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id, descripcion 
+                    FROM categoria
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id, descripcion 
+                    FROM categoria
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: UPDATE opcion SET es_correcta=true
+                    WHERE pregunta_id='71' and descripcion='asd3'
+[2023-06-26][INFO]Ejecutando query: SELECT id, descripcion 
+                    FROM categoria
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='2'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='2' AND d.aceptado=false AND u.id!='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT pregunta.descripcion as pregunta, pregunta.id as id, 
+       GROUP_CONCAT(CONCAT_WS('<br>', opcion.descripcion) SEPARATOR '<br>') AS datos_opcion,
+        GROUP_CONCAT( IF(opcion.es_correcta = 1, CONCAT_WS('<br>', opcion.descripcion), NULL) SEPARATOR '<br>' ) AS correcta,
+        c.descripcion as categoria
+        FROM categoria c JOIN pregunta ON pregunta.id_cat=c.id
+        LEFT JOIN opcion ON pregunta.id = opcion.pregunta_id
+        WHERE pregunta.aprobada = 0 GROUP BY pregunta.id;
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT pregunta.descripcion as pregunta, pregunta.id as id, 
+       GROUP_CONCAT(CONCAT_WS('<br>', opcion.descripcion) SEPARATOR '<br>') AS datos_opcion,
+        GROUP_CONCAT( IF(opcion.es_correcta = 1, CONCAT_WS('<br>', opcion.descripcion), NULL) SEPARATOR '<br>' ) AS correcta,
+        c.descripcion as categoria
+        FROM categoria c JOIN pregunta ON pregunta.id_cat=c.id
+        LEFT JOIN opcion ON pregunta.id = opcion.pregunta_id
+        WHERE pregunta.aprobada = 0 GROUP BY pregunta.id;
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT pregunta.descripcion as pregunta, pregunta.id as id, 
+       GROUP_CONCAT(CONCAT_WS('<br>', opcion.descripcion) SEPARATOR '<br>') AS datos_opcion,
+        GROUP_CONCAT( IF(opcion.es_correcta = 1, CONCAT_WS('<br>', opcion.descripcion), NULL) SEPARATOR '<br>' ) AS correcta,
+        c.descripcion as categoria
+        FROM categoria c JOIN pregunta ON pregunta.id_cat=c.id
+        LEFT JOIN opcion ON pregunta.id = opcion.pregunta_id
+        WHERE pregunta.aprobada = 0 GROUP BY pregunta.id;
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT pregunta.descripcion as pregunta, pregunta.id as id, 
+       GROUP_CONCAT(CONCAT_WS('<br>', opcion.descripcion) SEPARATOR '<br>') AS datos_opcion,
+        GROUP_CONCAT( IF(opcion.es_correcta = 1, CONCAT_WS('<br>', opcion.descripcion), NULL) SEPARATOR '<br>' ) AS correcta,
+        c.descripcion as categoria
+        FROM categoria c JOIN pregunta ON pregunta.id_cat=c.id
+        LEFT JOIN opcion ON pregunta.id = opcion.pregunta_id
+        WHERE pregunta.aprobada = 0 GROUP BY pregunta.id;
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT pregunta.descripcion as pregunta, pregunta.id as id, 
+       GROUP_CONCAT(CONCAT_WS('<br>', opcion.descripcion) SEPARATOR '<br>') AS datos_opcion,
+        GROUP_CONCAT( IF(opcion.es_correcta = 1, CONCAT_WS('<br>', opcion.descripcion), NULL) SEPARATOR '<br>' ) AS correcta,
+        c.descripcion as categoria
+        FROM categoria c JOIN pregunta ON pregunta.id_cat=c.id
+        LEFT JOIN opcion ON pregunta.id = opcion.pregunta_id
+        WHERE pregunta.aprobada = 0 GROUP BY pregunta.id;
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT pregunta.descripcion as pregunta, pregunta.id as id, 
+       GROUP_CONCAT(CONCAT_WS('<br>', opcion.descripcion) SEPARATOR '<br>') AS datos_opcion,
+        GROUP_CONCAT( IF(opcion.es_correcta = 1, CONCAT_WS('<br>', opcion.descripcion), NULL) SEPARATOR '<br>' ) AS correcta,
+        c.descripcion as categoria
+        FROM categoria c JOIN pregunta ON pregunta.id_cat=c.id
+        LEFT JOIN opcion ON pregunta.id = opcion.pregunta_id
+        WHERE pregunta.aprobada = 0 GROUP BY pregunta.id;
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT pregunta.descripcion as pregunta, pregunta.id as id, 
+       GROUP_CONCAT(CONCAT_WS('<br>', opcion.descripcion) SEPARATOR '<br>') AS datos_opcion,
+        GROUP_CONCAT( IF(opcion.es_correcta = 1, CONCAT_WS('<br>', opcion.descripcion), NULL) SEPARATOR '<br>' ) AS correcta,
+        c.descripcion as categoria
+        FROM categoria c JOIN pregunta ON pregunta.id_cat=c.id
+        LEFT JOIN opcion ON pregunta.id = opcion.pregunta_id
+        WHERE pregunta.aprobada = 0 GROUP BY pregunta.id;
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: DELETE FROM opcion WHERE pregunta_id='71'
+[2023-06-26][INFO]Ejecutando query: DELETE FROM pregunta WHERE id='71'
+[2023-06-26][INFO]Ejecutando query: SELECT pregunta.descripcion as pregunta, pregunta.id as id, 
+       GROUP_CONCAT(CONCAT_WS('<br>', opcion.descripcion) SEPARATOR '<br>') AS datos_opcion,
+        GROUP_CONCAT( IF(opcion.es_correcta = 1, CONCAT_WS('<br>', opcion.descripcion), NULL) SEPARATOR '<br>' ) AS correcta,
+        c.descripcion as categoria
+        FROM categoria c JOIN pregunta ON pregunta.id_cat=c.id
+        LEFT JOIN opcion ON pregunta.id = opcion.pregunta_id
+        WHERE pregunta.aprobada = 0 GROUP BY pregunta.id;
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT pregunta.descripcion as pregunta, pregunta.id as id, 
+                GROUP_CONCAT(CONCAT_WS('<br>', opcion.descripcion) SEPARATOR '<br>') AS datos_opcion
+                    FROM pregunta LEFT JOIN opcion ON pregunta.id = opcion.pregunta_id
+                        WHERE pregunta.reportada = true 
+                                GROUP BY pregunta.id;
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='2'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='2' AND d.aceptado=false AND u.id!='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_nivel FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT p.id, p.descripcion
+                FROM pregunta p
+                LEFT JOIN preguntas_contestadas AS pc ON p.id = pc.id_pregunta AND pc.id_usuario = '2'
+                WHERE pc.id_pregunta IS NULL and p.id_nivel='1' and p.aprobada=true
+                order by RAND() LIMIT 1
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET cant_preguntas= cant_preguntas+1 WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET cant_presentaciones=cant_presentaciones+1 WHERE id='48'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='48'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='48'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion from opcion WHERE pregunta_id='48'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='48' and es_correcta=TRUE
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta
+                    SET reportada=1 WHERE id='48'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET porcentaje_aciertos=aciertos/cant_preguntas*100 WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: UPDATE usuario SET id_nivel= 1 WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET porcentaje_aciertos=aciertos/cant_presentaciones*100 WHERE id='48'
+[2023-06-26][INFO]Ejecutando query: SELECT porcentaje_aciertos FROM pregunta WHERE id='48'
+[2023-06-26][INFO]Ejecutando query: UPDATE pregunta SET id_nivel= 3 WHERE id='48'
+[2023-06-26][INFO]Ejecutando query: SELECT descripcion FROM opcion WHERE pregunta_id='48' and es_correcta=TRUE
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+               FROM partida p
+                    WHERE p.id_usuario='2'
+                 ORDER BY p.id DESC LIMIT 1
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='48'
+[2023-06-26][INFO]Ejecutando query: SELECT c.color as color, c.icon as icon
+                FROM categoria as c JOIN pregunta AS p ON p.id_cat=c.id
+                WHERE p.id='48'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='2'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='2' AND d.aceptado=false AND u.id!='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id, descripcion 
+                    FROM categoria
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT pregunta.descripcion as pregunta, pregunta.id as id, 
+                GROUP_CONCAT(CONCAT_WS('<br>', opcion.descripcion) SEPARATOR '<br>') AS datos_opcion
+                    FROM pregunta LEFT JOIN opcion ON pregunta.id = opcion.pregunta_id
+                        WHERE pregunta.reportada = true 
+                                GROUP BY pregunta.id;
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT pregunta.descripcion as pregunta, pregunta.id as id, 
+                GROUP_CONCAT(CONCAT_WS('<br>', opcion.descripcion) SEPARATOR '<br>') AS datos_opcion
+                    FROM pregunta LEFT JOIN opcion ON pregunta.id = opcion.pregunta_id
+                        WHERE pregunta.reportada = true 
+                                GROUP BY pregunta.id;
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='2'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='2' AND d.aceptado=false AND u.id!='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='2'
+[2023-06-26][INFO]Ejecutando query: SELECT id as id_usuario FROM usuario WHERE username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT username, nombre, fecha_ingreso ,
+                  FLOOR(DATEDIFF(CURDATE(), fecha_nacimiento) / 365) AS edad, pais, porcentaje_aciertos, sexo
+                    FROM usuario
+[2023-06-26][INFO]Ejecutando query: SELECT COUNT(id) as contador
+                    FROM usuario
+[2023-06-26][INFO]Ejecutando query: SELECT COUNT(id) as contador
+                    FROM usuario
+                    WHERE datediff(CURDATE(),fecha_ingreso)<32 
+[2023-06-26][INFO]Ejecutando query: SELECT DISTINCT pais
+                FROM usuario
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje as puntaje, p.fecha as fecha, u.username as username, p.id as id
+                FROM partida p JOIN usuario u ON p.id_usuario=u.id
+[2023-06-26][INFO]Ejecutando query: SELECT COUNT(*) as contador
+                FROM partida
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.id as id, c.descripcion as cDescripcion, n.descripcion as nDescripcion, 
+                p.descripcion as pDescripcion, p.aciertos as aciertos, p.cant_presentaciones as cantPresentaciones, 
+                    p.porcentaje_aciertos as porcentajeAciertos, p.fecha as fecha 
+                FROM pregunta p JOIN categoria C ON p.id_cat=c.id
+                    JOIN nivel n on p.id_nivel=n.id
+                where aprobada=1
+                    ORDER BY p.id
+[2023-06-26][INFO]Ejecutando query: SELECT count(*) as contador
+                    FROM pregunta p
+                        WHERE aprobada=1
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.id as id, c.descripcion as cDescripcion, n.descripcion as nDescripcion, 
+                    p.descripcion as pDescripcion, p.aciertos as aciertos, p.cant_presentaciones as cantPresentaciones, 
+                    p.porcentaje_aciertos as porcentajeAciertos, p.fecha as fecha 
+                    FROM pregunta p JOIN categoria C ON p.id_cat=c.id
+                    JOIN nivel n on p.id_nivel=n.id
+                    WHERE fecha BETWEEN '2023-06-14' and  '2023-06-26' and aprobada=1
+                    ORDER BY p.id
+[2023-06-26][INFO]Ejecutando query: SELECT count(*) as contador
+                    FROM pregunta p 
+                    WHERE fecha BETWEEN '2023-06-14' and  '2023-06-26' and aprobada=1
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.id as id, c.descripcion as cDescripcion, n.descripcion as nDescripcion, 
+                    p.descripcion as pDescripcion, p.aciertos as aciertos, p.cant_presentaciones as cantPresentaciones, 
+                    p.porcentaje_aciertos as porcentajeAciertos, p.fecha as fecha 
+                    FROM pregunta p JOIN categoria C ON p.id_cat=c.id
+                    JOIN nivel n on p.id_nivel=n.id
+                    WHERE fecha BETWEEN '2023-06-07' and  '2023-06-26' and aprobada=1
+                    ORDER BY p.id
+[2023-06-26][INFO]Ejecutando query: SELECT count(*) as contador
+                    FROM pregunta p 
+                    WHERE fecha BETWEEN '2023-06-07' and  '2023-06-26' and aprobada=1
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT username, nombre, fecha_ingreso ,
+                  FLOOR(DATEDIFF(CURDATE(), fecha_nacimiento) / 365) AS edad, pais, porcentaje_aciertos, sexo
+                    FROM usuario
+[2023-06-26][INFO]Ejecutando query: SELECT COUNT(id) as contador
+                    FROM usuario
+[2023-06-26][INFO]Ejecutando query: SELECT COUNT(id) as contador
+                    FROM usuario
+                    WHERE datediff(CURDATE(),fecha_ingreso)<32 
+[2023-06-26][INFO]Ejecutando query: SELECT DISTINCT pais
+                FROM usuario
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT username, nombre, fecha_ingreso ,
+                  FLOOR(DATEDIFF(CURDATE(), fecha_nacimiento) / 365) AS edad, pais, porcentaje_aciertos, sexo
+                    FROM usuario WHERE fecha_ingreso BETWEEN '' and '2023-06-26' AND sexo = 'Masculino'
+[2023-06-26][INFO]Ejecutando query: SELECT COUNT(id) as contador
+                FROM usuario WHERE fecha_ingreso BETWEEN '' and '2023-06-26' AND sexo = 'Masculino'
+[2023-06-26][INFO]Ejecutando query: SELECT COUNT(id) as contador
+                    FROM usuario
+                    WHERE datediff(CURDATE(),fecha_ingreso)<32 
+[2023-06-26][INFO]Ejecutando query: SELECT DISTINCT pais
+                FROM usuario
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT username, nombre, fecha_ingreso ,
+                  FLOOR(DATEDIFF(CURDATE(), fecha_nacimiento) / 365) AS edad, pais, porcentaje_aciertos, sexo
+                    FROM usuario WHERE fecha_ingreso BETWEEN '' and '2023-06-26' AND pais ='Argentina'
+[2023-06-26][INFO]Ejecutando query: SELECT COUNT(id) as contador
+                FROM usuario WHERE fecha_ingreso BETWEEN '' and '2023-06-26' AND pais ='Argentina'
+[2023-06-26][INFO]Ejecutando query: SELECT COUNT(id) as contador
+                    FROM usuario
+                    WHERE datediff(CURDATE(),fecha_ingreso)<32 
+[2023-06-26][INFO]Ejecutando query: SELECT DISTINCT pais
+                FROM usuario
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT username, nombre, fecha_ingreso ,
+                  FLOOR(DATEDIFF(CURDATE(), fecha_nacimiento) / 365) AS edad, pais, porcentaje_aciertos, sexo
+                    FROM usuario WHERE fecha_ingreso BETWEEN '' and '2023-06-26' AND pais ='Argentina' AND sexo = 'Masculino'
+[2023-06-26][INFO]Ejecutando query: SELECT COUNT(id) as contador
+                FROM usuario WHERE fecha_ingreso BETWEEN '' and '2023-06-26' AND pais ='Argentina' AND sexo = 'Masculino'
+[2023-06-26][INFO]Ejecutando query: SELECT COUNT(id) as contador
+                    FROM usuario
+                    WHERE datediff(CURDATE(),fecha_ingreso)<32 
+[2023-06-26][INFO]Ejecutando query: SELECT DISTINCT pais
+                FROM usuario
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='Rayzal'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje as puntaje, p.fecha as fecha, u.username as username, p.id as id
+                FROM partida p JOIN usuario u ON p.id_usuario=u.id
+[2023-06-26][INFO]Ejecutando query: SELECT COUNT(*) as contador
+                FROM partida
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje as puntaje
+            FROM partida p 
+                WHERE p.id_usuario='1'
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT * FROM usuario 
+                WHERE esta_validado=1 
+                ORDER BY puntaje_final DESC LIMIT 4
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT p.puntaje 
+                FROM partida p JOIN usuario u ON u.id=id_usuario
+                    WHERE u.id='1'
+                 ORDER BY p.id DESC LIMIT 1;
+[2023-06-26][INFO]Ejecutando query: SELECT d.id as id, u.username as username
+                FROM duelo d JOIN usuario u ON u.id=d.id_retador
+                WHERE d.id_rival='1' AND d.aceptado=false AND u.id!='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT u.username as username, d.ganador as ganador,
+                d.puntaje_retador as puntajeRetador, d.puntaje_rival as puntajeRival
+            FROM usuario u JOIN duelo d ON d.id_retador=u.id or d.id_rival=u.id
+            WHERE u.username!='admin' 
+[2023-06-26][INFO]Ejecutando query: SELECT u.*, count(p.id) as contador
+            FROM usuario u JOIN partida p ON u.id=p.id_usuario
+            WHERE u.username='admin'
+[2023-06-26][INFO]Ejecutando query: SELECT count(id) as contador
+            FROM duelo
+            WHERE id_retador='1' or id_rival='1' and aceptado= true
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'
+[2023-06-26][INFO]Ejecutando query: SELECT id_rol FROM usuario WHERE id='1'

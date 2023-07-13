@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang='es'>
+<title>Kirby Pregunta</title>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="/public/css/scrollbar.css">
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="/public/js/preguntas.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""/>
+
+<body class=" bg-[url('/public/img/mario.png')] bg-cover bg-no-repeat">
+<header class='bg-[#1C1919CC] bg-opacity-80 h-[122px] lg:h-[92px] w-full px-6 overflow-hidden'>
+
+    <div class="flex flex-col lg:flex-row justify-between items-center h-full p-4">
+        <div class="lg:flex gap-x-2 hidden">
+            <a href="/user/lobby"><img src="/public/img/home.png" alt="home"></a>
+            <audio id="musica-fondo" src="/public/sounds/kirby-fondo.mp3" loop autoplay>
+                Tu navegador no soporta el elemento <code>audio</code>
+            </audio>
+            <button onclick="toggleMusic()"><img class="max-w-[100%] w-[30px] h-[30px]" src="/public/img/sonido.png"></button>
+        </div>
+        <div>
+            <h1 class="font-[primary] not-italic text-[20px] lg:text-[35px] font-extrabold"><span
+                    class="text-[#E169E3]">KIRBY </span><span class="text-[#5990D2]">PREGUNTA</span></h1>
+        </div>
+
+        <div class="flex justify-center items-center gap-x-2">
+
+            <div class=" border-2 border-[#252121] rounded-2xl bg-[#252121] bg-opacity-80">
+                {{#perfil}}
+                    <img class="w-[100%] max-w-[50px] h-[50px]  rounded-2xl" src="/public/fotosPerfil/{{img_profile}}" style="width: 400px"
+                         alt="{{img_profile}}">
+            </div>
+                    <div>
+                        <button id="foto-perfil" type="button" data-dropdown-toggle="userDropdown"
+                                data-dropdown-placement="bottom-start"
+                                class="text-[#9D9D9D] text-[15px] font-semibold tracking-[0.10em]">{{username}}</button>
+
+                        <div id="userDropdown"
+                             class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+                             id="usuario-perfil">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="avatarButton">
+                                <li>
+                                    <a  href="/user/perfil"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Ver Perfil</a>
+                                </li>
+                                <li>
+                                    <a href="modificar"
+                                       class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Modificar Perfil</a>
+                                </li>
+                                {{#admin}}
+                                    <li>
+                                        <a href="/admin/jugadores"
+                                           class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Ver
+                                            Jugadores</a>
+                                    </li>
+                                    <li>
+                                        <a href="/admin/partidas"
+                                           class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Ver
+                                            Partidas</a>
+                                    </li>
+                                    <li>
+                                        <a href="/admin/preguntas"
+                                           class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Ver
+                                            Preguntas</a>
+                                    </li>
+                                {{/admin}}
+                                {{#editor}}
+                                    <li>
+                                        <a href="/pregunta/preguntasSugeridas"
+                                           class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Ver preguntas sugeridas </a>
+                                    </li>
+                                    <li>
+                                        <a href="/pregunta/preguntasReportadas"
+                                           class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Ver preguntas reportadas</a>
+                                    </li>
+                                    <li>
+                                        <a href="/editor/crearPregunta"
+                                           class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Crear
+                                            Preguntas</a>
+                                    </li>
+                                    <li>
+                                        <a href="/editor/modificarPregunta"
+                                           class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Modificar pregunta</a>
+                                    </li>
+                                    <li>
+                                        <a href="/editor/crearCategoria"
+                                           class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600
+                                           dark:hover:text-white">Alta categoría</a>
+                                    </li>
+
+                                {{/editor}}
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <p class="text-[12px] text-white font-semibold">{{puntaje_final}}</p>
+
+                {{/perfil}}
+
+                <form action="/user/logout" method="post">
+                    <input class="bg-[#252121] text-[12px] text-white p-2 rounded-3xl cursor-pointer hover:bg-white hover:text-black" type="submit" name="logout" value="Cerrar sesión">
+            </form>
+        </div>
+    </div>
+</header>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+

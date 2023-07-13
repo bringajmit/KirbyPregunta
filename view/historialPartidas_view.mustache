@@ -1,0 +1,40 @@
+{{>headerLogin}}
+
+<main class="h-[100vh] flex items-center justify-center my-6">
+    {{#perfil}}
+
+    <div class="relative bg-[#1C1919] bg-opacity-80 mx-auto rounded-2xl md:w-[682px] h-full  w-[333px] flex flex-col ">
+        <div class="flex justify-center items-start">
+            <p class="mt-9 text-white text-[15px] lg:text-[20px] tracking-[0.12em] text-bold uppercase">{{username}}, jugaste {{contador}}
+                partidas</p>
+        </div>
+    {{/perfil}}
+<div class="overflow-y-scroll scrollbar">
+            <table class=" bg-[#252121] bg-opacity-80 rounded-l-2xl w-[80%] mx-auto text-center  rounded-3xl border-collapse border-separate mt-12 p-5 mb-6 "  >
+                <tr class="">
+                    <th class="text-white text-[12px] font-semibold md:text-[15px] p-2">#</th>
+                    <th class="text-white text-[12px] font-semibold md:text-[15px] p-2">Puntaje</th>
+                </tr>
+    {{#historialPartidas}}
+                 <tr class="">
+                     <td class="text-white text-[12px] md:text-[15px] p-2" name="orden"></td>
+                     <td class="text-white text-[12px] md:text-[15px] p-2">{{puntaje}}</td>
+                </tr>
+    {{/historialPartidas}}
+            </table>
+</div>
+    <script>
+        var array = document.querySelectorAll('[name="orden"]');
+        var cantidad = array.length;
+
+        for (var i = 1; i <= cantidad; i++) {
+            array[i-1].textContent = i;
+        }
+    </script>
+    <img src="/public/img/historial.png" alt="historial" class="absolute w-[70px] h-[66px] lg:w-[90px] lg:h-[80px] bottom-0 -right-4">
+    </div>
+
+</main>
+
+
+{{>footer}}

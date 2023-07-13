@@ -1,0 +1,51 @@
+{{>headerLogin}}
+<main class="flex items-center justify-center my-6">
+
+    <div class="flex flex-col justify-center items-center min-h-screen w-full gap-4">
+        <div class="flex flex-col items-center justify-center text-[12px] md:text-[15px] gap-y-2">
+            <div class="bg-[#1C1919] rounded-2xl bg-opacity-80 w-[230px] h-[70px] md:w-[270px] md:h-[70px] flex items-center justify-center">
+                <p class="text-white font-bold text-[15px] md:text-[20px] uppercase">Partidas</p>
+            </div>
+            <div class="bg-[#1C1919] rounded-2xl bg-opacity-80 w-[230px] h-[70px] md:w-[270px] md:h-[70px] flex items-center justify-center">
+                <p class="text-white font-semibold px-4 text-[15px] md:text-[20px] text-center">Cantidad de partidas jugadas: {{cantPartidas}}</p>
+            </div>
+        </div>
+
+        <div class="max-w-[800px] bg-[#1C1919] rounded-2xl bg-opacity-80 mx-auto w-[80%] h-[50px] md:h-[70px] flex items-center justify-start  text-white font-normal">
+            <form method="post" action="/admin/partidas" class="w-full  text-[12px] md:text-[15px] flex gap-2 p-2 justify-between items-center">
+                <label class="text-white font-semibold"  for="fechaDesde" >Fecha desde</label>
+                <input class="text-black p-2 outline-0 rounded" name="fechaDesde" type="date">
+                <label  class="text-white font-semibold"  for="fechaHasta"  >Fecha hasta</label>
+                <input  class="text-black p-2 outline-0 rounded" name="fechaHasta" type="date" value="{{fechaActual}}">
+                <input type="submit" value="Buscar" class="p-2 rounded text-white font-bold bg-[#1C1919] w-[20%] hover:bg-gray-100 hover:text-black" name="filtrar" id="filtrar">
+            </form>
+        </div>
+
+        <div class="max-w-[1068px] w-full flex flex-col p-2 flex-grow">
+            <form class="overflow-y-auto overflow-x-auto scrollbar flex flex-col justify-center items-center gap-2" method="post" action="/pdf/pdf" target="_blank">
+                <input class=" hover:bg-gray-100 hover:text-black font-semibold bg-[#252121] bg-opacity-80 rounded-2xl p-2 cursor-pointer text-white "
+                       type="submit" name="generarPDFPartidas" value="Descargar">
+                <table class=" bg-[#252121] bg-opacity-80 w-[80%] mx-auto text-center p-5 mb-6 "  >
+                    <thead class=" bg-[#252121] bg-opacity-80 font-medium text-white">
+                    <tr class="">
+                        <th class="text-white text-[12px] font-semibold md:text-[15px] p-2">ID partida</th>
+                        <th class="text-white text-[12px] font-semibold md:text-[15px] p-2">Usuario</th>
+                        <th class="text-white text-[12px] font-semibold md:text-[15px] p-2">Puntaje</th>
+                        <th class="text-white text-[12px] font-semibold md:text-[15px] p-2">Fecha de partida</th>
+                    </tr>
+                    </thead>
+                    {{#partidas}}
+                        <tr>
+                            <th class="text-white text-[12px] md:text-[15px] p-2">{{id}}</th>
+                            <th class="text-white text-[12px] md:text-[15px] p-2">{{username}}</th>
+                            <th class="text-white text-[12px] md:text-[15px] p-2">{{puntaje}}</th>
+                            <th class="text-white text-[12px] md:text-[15px] p-2">{{fecha}}</th>
+                        </tr>
+                    {{/partidas}}
+                </table>
+            </form>
+        </div>
+    </div>
+
+</main>
+{{> footer}}

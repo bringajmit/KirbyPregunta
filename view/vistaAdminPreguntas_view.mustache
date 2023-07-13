@@ -1,0 +1,60 @@
+{{>headerLogin}}
+<main class=" flex items-center justify-center my-6">
+
+    <div class="flex flex-col justify-center items-center w-full  gap-6">
+        <div class="flex flex-col items-center justify-center text-[12px] md:text-[15px] gap-y-2">
+            <div class="bg-[#1C1919] rounded-2xl bg-opacity-80 w-[230px] h-[70px] md:w-[270px] md:h-[70px] flex items-center justify-center">
+                <p class="text-white font-bold text-[15px] md:text-[20px] uppercase">Preguntas</p>
+            </div>
+            <div class="bg-[#1C1919] rounded-2xl bg-opacity-80 w-[230px] h-[70px] md:w-[300px] md:h-[70px] flex items-center justify-center">
+                <p class="text-white font-semibold px-4 text-[15px] md:text-[20px] text-center">Cantidad de preguntas: {{cantPreguntas}}</p>
+            </div>
+        </div>
+
+        <div class=" max-w-[800px] bg-[#1C1919] rounded-2xl bg-opacity-80 w-full h-[50px] md:h-[70px] flex items-center justify-start  text-white font-normal">
+            <form method="post" action="/admin/preguntas" class="w-full flex gap-2 p-2 items-center justify-around">
+                <label class="text-white font-semibold"  for="fechaDesde" >Fecha desde</label>
+                <input class="text-black p-2 outline-0 rounded" name="fechaDesde" type="date">
+                <label  class="text-white font-semibold"  for="fechaHasta"  >Fecha hasta</label>
+                <input  class="text-black p-2 outline-0 rounded" name="fechaHasta" type="date" value="{{fechaActual}}">
+                <input type="submit" value="Buscar" class="p-2 rounded text-white font-bold bg-[#1C1919] w-[20%] hover:bg-gray-100 hover:text-black" name="filtrar" id="filtrar">
+            </form>
+        </div>
+
+
+        <div class="max-w-[1068px] w-full flex flex-col p-2 flex-grow bg-[#1C1919] bg-opacity-80 rounded-xl max-h-[500px]">
+            <form class="overflow-y-auto overflow-x-auto scrollbar flex flex-col items-center gap-2 h-full" method="post" action="/pdf/pdf" target="_blank">
+                <input class=" hover:bg-gray-100 hover:text-black font-semibold bg-[#252121] bg-opacity-80 rounded-2xl p-2 text-white "
+                       type="submit" name="generarPDFPreguntas" value="Descargar">
+                <table class=" bg-[#252121] bg-opacity-80  w-[80%] mx-auto text-center p-5 mb-6">
+                    <thead class=" bg-[#252121] bg-opacity-80 font-medium text-white">
+                    <tr class="">
+                        <th class="text-white text-[12px] font-semibold md:text-[15px] p-2">ID pregunta</th>
+                        <th class="text-white text-[12px] font-semibold md:text-[15px] p-2">Pregunta</th>
+                        <th class="text-white text-[12px] md:text-[15px] p-2">Categoria</th>
+                        <th class="text-white text-[12px] md:text-[15px] p-2">Nivel</th>
+                        <th class="text-white text-[12px] md:text-[15px] p-2">Aciertos</th>
+                        <th class="text-white text-[12px] md:text-[15px] p-2">Presentaciones</th>
+                        <th class="text-white text-[12px] md:text-[15px] p-2">Porcentaje aciertos</th>
+                        <th class="text-white text-[12px] font-semibold md:text-[15px] p-2">Fecha de creacion</th>
+                    </tr>
+                    </thead>
+                    {{#preguntas}}
+                        <tr>
+                            <th class="text-white text-[12px] md:text-[15px] p-2">{{id}}</th>
+                            <th class="text-white text-[12px] md:text-[15px] p-2">{{pDescripcion}}</th>
+                            <th class="text-white text-[12px] md:text-[15px] p-2">{{cDescripcion}}</th>
+                            <th class="text-white text-[12px] md:text-[15px] p-2">{{nDescripcion}}</th>
+                            <th class="text-white text-[12px] md:text-[15px] p-2">{{aciertos}}</th>
+                            <th class="text-white text-[12px] md:text-[15px] p-2">{{cantPresentaciones}}</th>
+                            <th class="text-white text-[12px] md:text-[15px] p-2">{{porcentajeAciertos}}</th>
+                            <th class="text-white text-[12px] md:text-[15px] p-2">{{fecha}}</th>
+                        </tr>
+                    {{/preguntas}}
+                </table>
+            </form>
+        </div>
+    </div>
+
+</main>
+{{> footer}}

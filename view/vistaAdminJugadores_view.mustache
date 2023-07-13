@@ -1,0 +1,130 @@
+{{>headerLogin}}
+<main class="flex items-center justify-center my-12">
+
+    <div class="flex flex-col justify-center items-center w-full min-h-screen gap-6">
+
+        <div class="flex flex-col items-center justify-center text-[12px] md:text-[15px]">
+            <div class="bg-[#1C1919] rounded-2xl bg-opacity-80 w-[180px] h-[50px] md:w-[270px] md:h-[70px] flex items-center justify-center">
+                <p class="text-white font-semibold text-[15px] md:text-[20px] uppercase">Jugadores</p>
+            </div>
+
+            <div class="max-w-[800px] w-full flex gap-x-4 md:justify-between items-center p-2">
+                <div class="bg-[#1C1919] rounded-2xl bg-opacity-80 w-[180px] h-[50px] md:w-[270px] md:h-[70px] flex items-center justify-center">
+                    <p class="text-white font-semibold px-4">Total de
+                        jugadores: {{cantJugadores}}</p>
+                </div>
+                <div class="bg-[#1C1919] rounded-2xl bg-opacity-80 w-[180px] h-[50px] md:w-[270px] md:h-[70px] flex items-center justify-center">
+                    <p class="text-white font-semibold px-4">Cantidad de
+                        jugadores
+                        nuevos: {{cantJugadoresNuevos}}</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="max-w-[800px] bg-[#1C1919] rounded-2xl bg-opacity-80 w-full h-auto md:h-auto flex flex-col p-2 items-center text-white font-normal">
+            <form method="post" action="/admin/jugadores" class="w-full flex flex-col gap-2 p-2" id="filtroForm">
+                <div class="flex text-[12px] md:text-[15px] gap-x-2 justify-around items-center">
+                    <div class="flex items-center md:gap-x-2">
+                        <label class="text-white font-semibold" for="fechaDesde">Fecha desde</label>
+                        <input class="text-black p-2 outline-0 rounded" name="fechaDesde" type="date">
+                    </div>
+                    <div class="flex items-center md:gap-x-2">
+                        <label class="text-white font-semibold" for="fechaHasta">Fecha hasta</label>
+                        <input class="text-black p-2 outline-0 rounded" name="fechaHasta" type="date"
+                               value="{{fechaActual}}">
+                    </div>
+                    <div class="flex items-center justify-center gap-x-2">
+                        <input class="text-[15px] font-semibold" type="checkbox" name="nuevos">Nuevos
+                    </div>
+                </div>
+
+                <div class="flex gap-x-2 text-[12px] md:text-[15px] justify-center">
+                    <select class="text-black  flex flex-1 p-2 rounded" name="pais">
+                        <option value="" disabled selected hidden>Pais</option>
+                        {{#paises}}
+                            <option value="{{pais}}">{{pais}}</option>
+                        {{/paises}}
+                    </select>
+                    <select class="text-black flex flex-1 p-2 rounded" name="sexo">
+                        <option value="" disabled selected hidden>Sexo</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Prefiero no decirlo">Prefiero no decirlo</option>
+                    </select>
+                    <select class="text-black flex flex-1 p-2 rounded" name="edad">
+                        <option value="" disabled selected hidden>Grupo etario</option>
+                        <option value="Menores">Menores</option>
+                        <option value="Medio">Medio</option>
+                        <option value="Jubilados">Jubilados</option>
+                    </select>
+                </div>
+
+                <div class="flex items-center justify-center text-[12px] md:text-[15px]">
+                    <input type="submit" value="Buscar"
+                           class="p-2 rounded text-white font-bold bg-[#252121] bg-opacity-80 w-[20%] hover:bg-gray-100 hover:text-black"
+                           name="filtrar" id="filtrar">
+                </div>
+            </form>
+        </div>
+
+
+        <div class="max-w-[1068px] w-full flex flex-col p-2 flex-grow">
+            <form class="overflow-y-scroll overflow-x-scroll scrollbar flex flex-col justify-center items-center gap-2" method="post" action="/pdf/pdf" target="_blank">
+                <input class=" hover:bg-gray-100 hover:text-black font-semibold bg-[#252121] bg-opacity-90 rounded-2xl p-2 text-white "
+                       type="submit" name="generarPDFJugadores" value="Descargar">
+                <table class="bg-[#252121] bg-opacity-80 w-[80%] mx-auto text-center">
+                    <thead class=" bg-[#252121] bg-opacity-80 font-medium text-white">
+                    <tr>
+                        <th class="text-white text-[12px] font-semibold md:text-[15px] p-2" name="posicion">
+                            Nombre
+                        </th>
+                        <th class="text-white text-[12px] font-semibold md:text-[15px] p-2" name="posicion">
+                            Usuario
+                        </th>
+                        <th class="text-white text-[12px] font-semibold md:text-[15px] p-2" name="posicion">
+                            Pais
+                        </th>
+                        <th class="text-white text-[12px] font-semibold md:text-[15px] p-2" name="posicion">
+                            Edad
+                        </th>
+                        <th class="text-white text-[12px] font-semibold md:text-[15px] p-2" name="posicion">
+                            Sexo
+                        </th>
+                        <th class="text-white text-[12px] font-semibold md:text-[15px] p-2" name="posicion">
+                            Porcentaje de aciertos
+                        </th>
+                        <th class="text-white text-[12px] font-semibold md:text-[15px] p-2" name="posicion">
+                            Fecha de ingreso
+                        </th>
+                    </tr>
+                    </thead>
+
+
+                    {{#jugadores}}
+                        <tr class="text-white font-normal text-[20px]">
+                            <th class="text-white text-[12px] font-semibold md:text-[15px] p-2"
+                                name="posicion">{{nombre}}</th>
+                            <th class="text-white text-[12px] font-semibold md:text-[15px] p-2"
+                                name="username">{{username}}</th>
+                            <th class="text-white text-[12px] font-semibold md:text-[15px] p-2"
+                                name="posicion">{{pais}}</th>
+                            <th class="text-white text-[12px] font-semibold md:text-[15px] p-2"
+                                name="posicion">{{edad}}</th>
+                            <th class="text-white text-[12px] font-semibold md:text-[15px] p-2"
+                                name="posicion">{{sexo}}</th>
+                            <th class="text-white text-[12px] font-semibold md:text-[15px] p-2" name="posicion">
+                                {{porcentaje_aciertos}}%
+                            </th>
+                            <th class="text-white text-[12px] font-semibold md:text-[15px] p-2" name="posicion">
+                                {{fecha_ingreso}}</th>
+                        </tr>
+                    {{/jugadores}}
+                </table>
+            </form>
+        </div>
+
+    </div>
+</main>
+{{> footer}}
+

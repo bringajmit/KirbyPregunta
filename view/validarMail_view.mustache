@@ -1,0 +1,15 @@
+{{>header}}
+<main class="h-[100vh] flex items-center justify-center">
+
+    <form class="w-full h-full flex flex-col justify-center items-center" action="/mail/validarMail" method="post">
+        <h1 class="text-black font-bold text-[13px] lg:text-[18px] mb-6 lg:mb-2">Te enviamos un mail, ingresá el código para validar.</h1>
+        <div class="w-full flex justify-center items-center">
+            <input class="w-auto lg:w-[30%] rounded-l-2xl p-5 outline-0 bg-[#1C1919] bg-opacity-80 text-white"
+                   placeholder="Ingrese el codigo" type="text" name="codigoEnviado">
+            <input class="w-auto lg:w-[10%] bg-[#1C1919] bg-opacity-80 border-l-[1px] border-white text-white font-normal rounded-r-2xl cursor-pointer p-5"
+                   type="submit" value="Enviar" name="enviarCodigo">
+        </div>
+    </form>
+
+</main>
+{{>footer}}

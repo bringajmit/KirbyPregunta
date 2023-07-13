@@ -1,0 +1,42 @@
+{{>headerLogin}}
+<main class="h-[80vh] flex items-center justify-center m-6">
+
+<div class="h-auto p-6 rounded-2xl bg-[#1C1919] bg-opacity-80  lg:w-[937px] mx-auto h-full overflow-y-scroll scrollbar">
+    <div class="lg:h-[60px] flex justify-between items-center gap-2 my-2 mb-6 mx-auto rounded-2xl p-4 bg-[#252121] bg-opacity-80 lg:w-[300px] text-center text-[15px] lg:text-xl text-white">
+        <img src="/public/img/puntos.png" class="w-[15px]">
+        <p>RANKING</p>
+        <img src="/public/img/puntos.png" class="w-[15px]">
+    </div>
+    <div class=" flex justify-center items-center flex-col gap-6 ">
+        <div class="w-full h-[35px] lg:w-[810px] lg:h-[70px] rounded-xl p-2 outline-0 bg-[#252121] bg-opacity-80 flex items-center">
+            <p class="text-white text-[15px] lg:text-2xl ml-5">#</p>
+            <p class="text-white text-[15px] lg:text-2xl ml-5">Foto</p>
+            <p class="text-white text-[15px] lg:text-2xl m-5">Username</p>
+            <p class="text-white text-[15px] lg:text-2xl ml-auto mr-2 ">Puntaje</p>
+        </div>
+        <div class="flex flex-col gap-y-6 mb-2">
+            {{#ranking}}
+                <div class="w-full h-[35px] lg:w-[810px] lg:h-[70px] rounded-xl p-2 outline-0 bg-[#252121] bg-opacity-80 flex items-center">
+                    <p class="text-white text-[15px] lg:text-2xl m-6" name="posicion"></p>
+                    <img src="/public/fotosPerfil/{{img_profile}}" class="max-w-[100%] w-[30px] h-full lg:w-[50px] lg:h-[50px]  rounded-xl">
+                    <form action="/user/perfil" method="get">
+                        <input type="submit" class="cursor-pointer text-white text-[15px] lg:text-xl m-4" value="{{username}}" name="username">
+                    </form>
+                    <p class="text-white text-[15px] lg:text-2xl ml-auto mr-10 ">{{puntaje_final}}</p>
+                </div>
+            {{/ranking}}
+        </div>
+
+
+        <script>
+            var array = document.querySelectorAll('[name="posicion"]');
+            var cantidad = array.length;
+
+            for (var i = 1; i <= cantidad; i++) {
+                array[i-1].textContent = i;
+            }
+        </script>
+    </div>
+</div>
+</main>
+{{>footer}}

@@ -1,0 +1,33 @@
+{{>header}}
+<main class="h-[100vh] flex items-center justify-center">
+
+    <div class="relative bg-[#1C1919] bg-opacity-80 rounded-2xl md:w-[982px] w-[382px] flex justify-center items-center flex-col gap-y-14 m-4 py-12 px-4 ">
+        <div class="bg-[#{{color}}] bg-opacity-80 rounded-2xl lg:w-[782px] p-4 w-auto flex justify-center items-center">
+            <img src="/public/img/reloj.png " class="absolute lg:top-3.5 right-16 w-[40px]">
+            <p id="temporizador" class="text-white text-[40px] absolute lg:top-0 right-5">10</p>
+            <p class="text-white text-[15px] md:text-3xl text-center">{{pregunta}}</p>
+        </div>
+
+        <div class="bg-[#77C055] bg-opacity-80 p-4 rounded-2xl lg:w-[550px]  w-[250px] flex justify-center items-center">
+            <p class="relative text-white text-[15px] md:text-3xl text-center">¡Respuesta Correcta!</p>
+        </div>
+
+        <div class="flex justify-around w-full gap-x-3 ">
+            <div class="bg-[#1C1919] bg-opacity-80 rounded-2xl flex justify-center items-center  py-2 md:py-4 px-4 ">
+                <p class="text-white text-[15px] md:text-3xl font-normal text-center"> Puntaje
+                    obtenido: {{puntaje}} </p>
+            </div>
+
+
+            <div class="bg-[#1C1919] bg-opacity-80 rounded-2xl py-2 md:py-4 px-4 flex justify-center items-center">
+                <a href="/duelo/versus" class="text-white font-normal  text-[15px] md:text-3xl text-center">
+                    Siguiente pregunta
+                </a>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+{{>footer}}

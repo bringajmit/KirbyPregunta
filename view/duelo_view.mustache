@@ -1,0 +1,37 @@
+{{>header}}
+<main class="h-[100vh] flex items-center justify-center">
+    <div class="relative bg-[#1C1919] bg-opacity-80 rounded-2xl md:w-[982px] w-[382px] flex justify-center items-center flex-col gap-y-14 m-4 py-12 px-4 ">
+        <div class="bg-[#{{color}}] bg-opacity-80 rounded-2xl lg:w-[782px] p-6 w-auto flex justify-center items-center">
+            <img src="/public/img/reloj.png " class="absolute -top-0 md:top-3.5 right-8 md:right-16 w-[40px]" alt="reloj">
+            <p id="temporizador" class="text-white text-[25px] md:text-[40px] absolute top-0 right-5">10</p>
+            <p id="pregunta" class="text-white text-[20px] font-semibold text-center"></p>
+        </div>
+
+        <form action="/duelo/versus" method="post">
+            <div class="relative lg:w-auto text-center flex flex-wrap justify-center font-semibold">
+                <div class="relative bg-[#1C1919] bg-opacity-80 rounded-2xl w-[350px] p-4 m-2 flex justify-center items-center">
+                    <input class="text-white text-[15px] text-center cursor-pointer" type="submit" value="" id="opcion1">
+                </div>
+                <div class="relative bg-[#1C1919] bg-opacity-80 rounded-2xl w-[350px] p-4 m-2 flex justify-center items-center">
+                    <input class="text-white text-[15px] text-center cursor-pointer" type="submit" value="" id="opcion2">
+                </div>
+                <div class="relative bg-[#1C1919] bg-opacity-80 rounded-2xl w-[350px] p-4 m-2 flex justify-center items-center">
+                    <input class="text-white text-[15px] text-center cursor-pointer" type="submit" value="" id="opcion3">
+                </div>
+                <div class="relative bg-[#1C1919] bg-opacity-80 rounded-2xl w-[350px] p-4 m-2 flex justify-center items-center">
+                    <input class="text-white text-[15px] text-center cursor-pointer" type="submit" value="" id="opcion4">
+                </div>
+            </div>
+        </form>
+
+        <div class="flex justify-end w-full">
+            <form action="/duelo/resultado" method="post">
+                <button id="idPregunta" value="" name="reportarPregunta" class="bg-red-400 p-2 text-white font-semibold  rounded-xl">Reportar</button>
+            </form>
+        </div>
+
+    </div>
+</main>
+
+
+{{>footer}}

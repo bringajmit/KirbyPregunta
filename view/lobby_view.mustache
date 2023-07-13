@@ -1,0 +1,130 @@
+{{>headerLogin}}
+<main class="h-[80vh] my-8 flex items-center justify-center">
+
+<div class="flex flex-col items-center justify-around gap-y-6">
+    <div class="flex flex-col lg:flex-row gap-y-2 items-center justify-center">
+        <!--Crear partida y ultima partida-->
+        <div class="flex flex-col gap-y-2 lg:gap-y-14 ">
+            <!--Crear partida-->
+            <div class="relative bg-[#1C1919] bg-opacity-80 w-[341px] h-[117px] lg:w-[625px] lg:h-[202px] rounded-2xl flex justify-start items-center ">
+                <a href="/partida/comenzandoPartida"
+                   class="text-white text-[10px] lg:text-[15px] lg:tracking-[0.16em] font-semibold">
+                    <div class="hover:bg-gray-200 hover:text-black flex justify-center items-center bg-[#252121] rounded-2xl w-[125px] h-[24px] lg:w-[305px] lg:h-[41px] ml-4">
+                        CREAR PARTIDA
+                    </div>
+                </a>
+                <img src="/public/img/crearPartida.png" alt="crearPartida"
+                     class="absolute lg:-top-28 right-0 max-w-[100%] w-[194px] h-[194px] lg:w-[338px] lg:h-[380px] ">
+            </div>
+            <!--Ultima partida-->
+            <div class="relative bg-[#1C1919] bg-opacity-80 w-[341px] h-[117px] lg:w-[625px] lg:h-[202px] rounded-2xl flex">
+                <div class="flex flex-col justify-center gap-y-2 ml-4 ">
+                    <h1 class="font-semibold text-[15px] lg:text-[20px] tracking-[0.12em]  text-white">ULTIMA
+                        PARTIDA</h1>
+                    <div class="flex items-center gap-x-2">
+                        <img class="w-[18px] lg:w-[28px] max-w-[100%]" src="/public/img/crown.png"
+                             class="color-white lg:w-[10%] h-[100%]">
+                        <label class="text-[12px] lg:text-[20px] text-white">{{puntaje}}</label>
+                    </div>
+                    <div class="flex gap-x-2">
+                        {{#flag}}
+                            <a href="/partida/jugar"
+                               class="text-white text-[10px] lg:text-[15px] lg:tracking-[0.16em] font-semibold">
+                                <div class="flex justify-center items-center bg-[#252121] rounded-2xl w-[97px] h-[19px] lg:w-[200px] lg:h-[35px] hover:bg-gray-200 hover:text-black">
+                                    CONTINUAR PARTIDA
+                                </div>
+                            </a>
+                        {{/flag}}
+                        <div class="flex justify-center items-center gap-x-2">
+                            <div>
+                                <button id="foto-perfil" type="button" data-dropdown-toggle="userDrodown"
+                                        data-dropdown-placement="bottom-start"
+                                        class="text-[#9D9D9D] text-[15px] font-semibold tracking-[0.10em]">VER HISTORIAL</button>
+
+                                <div id="userDrodown"
+                                     class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+                                     id="usuario-perfil">
+                                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="avatarButton">
+                                        <li>
+                                            <a  href="/historial/partidasJugadas"
+                                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Historial de partidas</a>
+                                        </li>
+                                        <li>
+                                            <a href="/historial/duelosJugados"
+                                               class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Historial de duelos</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="/public/img/historialPartidas.png"
+                     class="absolute -top-8 lg:-top-14 -right-4 max-w-[100%] w-[152px] h-[162px] lg:w-[286px] lg:h-[285px]">
+            </div>
+        </div>
+        <!--Ranking-->
+        <div class="bg-[#1C1919] bg-opacity-80 w-[339px] h-full lg:ml-16 lg:w-[335px] lg:h-[487px] rounded-2xl flex flex-col items-center justify-around ">
+            <div class="lg: h-[40px] flex justify-between  items-center gap-2 my-2 mx-auto rounded-2xl p-4 bg-[#1C1919] bg-opacity-80 lg:w-[300px] text-center text-[15px] lg:text-xl text-white">
+                <img src="/public/img/puntos.png" class="w-[15px]">
+                <p>RANKING</p>
+                <img src="/public/img/puntos.png" class="w-[15px]">
+            </div>
+
+            <div class=" flex justify-center items-center flex-col gap-x-2 gap-y-2 lg:gap-y-6">
+                {{#ranking}}
+                    <div class="w-[280px] h-[40px] lg:w-[310px] lg:h-[60px] rounded-xl p-2 outline-0 bg-[#252121] bg-opacity-80 flex items-center">
+                        <p class="text-white ext-[15px] lg:text-xl ml-1 mr-4 " name="posicion"></p>
+                        <img src="/public/fotosPerfil/{{img_profile}}"
+                             class="max-w-[100%] w-[30px] lg:w-[45px] h-full rounded-xl">
+                        <form action="/user/perfil" method="get">
+                            <input type="submit" class="text-white text-[15px] lg:text-xl m-4" value="{{username}}"
+                                   name="username">
+                        </form>
+                        <p class="text-white ext-[15px] lg:text-xl ml-auto mr-2 ">{{puntaje_final}}</p>
+                    </div>
+                {{/ranking}}
+            </div>
+            <script>
+                var array = document.querySelectorAll('[name="posicion"]');
+                var cantidad = array.length;
+
+                for (var i = 1; i <= cantidad; i++) {
+                    array[i - 1].textContent = i;
+                }
+            </script>
+            <div class="flex justify-center my-2 text-white">
+                <a class="lg:w-[300px] h-[40px] rounded-xl bg-[#1C1919] bg-opacity-80 flex justify-center items-center p-2 text-[15px] lg:text-2xl"
+                   href="/user/ranking">
+                    Ver ranking completo
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--Duelos pendientes-->
+    <div class=" bg-[#1C1919] bg-opacity-80 w-[341px] lg:w-[1025px] rounded-2xl ">
+        <div class="m-2">
+            <h1 class="font-semibold text-[15px] lg:text-[20px] tracking-[0.12em] text-white uppercase">Duelos
+                pendientes</h1>
+        </div>
+        <div class="flex flex-wrap justify-around">
+            {{#duelos}}
+                <div class="flex flex-col items-center bg-[#1C1919] rounded bg-opacity-80  lg:w-[200px] m-4">
+                    <div class="lg: h-[40px] flex justify-between  items-center gap-2 my-2 mx-auto rounded-2xl p-4 lg:w-[300px] text-center text-[15px] lg:text-xl text-white">
+                        <h1 class="font-semibold text-[15px] lg:text-[20px] tracking-[0.12em]  text-white">{{username}}</h1>
+                    </div>
+                    <div class="lg:h-[40px] flex justify-between items-center gap-2 mx-auto p-4 lg:w-[200px] text-center text-[15px] md:text-[20px] text-white hover:bg-gray-200 hover:text-black">
+                        <form action="/duelo/versus" method="post">
+                            <button value="{{id}}" name="aceptarDuelo" type="submit">Aceptar Partida</button>
+                        </form>
+                    </div>
+                </div>
+            {{/duelos}}
+        </div>
+    </div>
+
+</div>
+
+</main>
+
+{{> footer}}

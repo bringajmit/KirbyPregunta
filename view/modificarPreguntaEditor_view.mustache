@@ -1,0 +1,83 @@
+{{>headerLogin}}
+<main class="h-auto flex items-center justify-center p-4">
+
+    <div class="relative rounded-2xl p-6 bg-[#1C1919] bg-opacity-80  lg:w-[1137px] h-auto flex justify-center items-center flex-col">
+        <img class="absolute -top-8 right-0 md:-right-18 lg:top-0 lg:-right-16 w-[90px] h-[90px] md:w-[130px] md:h-[130px]"
+             src="/public/img/kirbyRegistro.png">
+
+        <form class="text-white font-light h-full md:max-w-[600px] lg:max-w-[890px] tracking-[0.06em] text-[15px] flex items-center justify-center"
+              action="/editor/editarPreguntas" method="POST" enctype="multipart/form-data">
+            <div class="flex flex-col gap-6  items-center justify-center">
+                <h2 class="mt-2 tracking-[0.12em] text-white font-semibold text-[15px] md:text-[20px] uppercase">
+                    Modificar Pregunta</h2>
+                {{#pregunta}}
+                    <input class="w-auto h-[32.88px] md:w-full lg:h-[47px] rounded-xl p-2 outline-0 bg-[#252121] bg-opacity-80"
+                           type="text" name="descripcion" id="nombre" required value="{{preguntaD}}">
+                {{/pregunta}}
+                <div class="flex flex-wrap gap-6 items-center justify-center">
+                    {{#opciones}}
+                        <div>
+                            <label for="opcion_{{id}}">Opción {{id}}</label><br>
+                        <input class="w-[280px] h-[32.88px] lg:w-[430px] lg:h-[47px] rounded-xl p-2 outline-0 bg-[#252121] bg-opacity-80"
+                               type="text" name="opcion_" value="{{descripcion}}" required>
+                    </div>
+                    {{/opciones}}
+
+                    <script>
+                        var opciones = document.querySelectorAll('input[name="opcion_"]');
+
+                        for (var i = 0; i < opciones.length; i++) {
+                            var opcion = opciones[i];
+                            opcion.name = "opcion_" + (i + 1);
+                        }
+                    </script>
+                    <div class="flex w-full justify-between gap-2">
+                        <select  class="flex flex-1 h-[32.88px] lg:h-[47px] rounded-xl p-2 px-6 outline-0 bg-[#252121] bg-opacity-80 bg-" name="categoria" required>
+                                {{#pregunta}}
+                                    <option value="{{idCat}}" selected>{{categoriaD}}</option>
+                                {{/pregunta}}
+                                {{#categoriasIncorrectas}}
+                                    <option value="{{id}}">{{descripcion}}</option>
+                                {{/categoriasIncorrectas}}
+                        </select>
+
+                        <select  class="flex flex-1 h-[32.88px] lg:h-[47px] rounded-xl p-2 outline-0 bg-[#252121] bg-opacity-80 bg-" name="dificultad" required>
+                            {{#pregunta}}
+                                <option value="{{idDificultad}}" selected hidden>{{dificultadD}}</option>
+                            {{/pregunta}}
+                            {{#dificultadesIncorrectas}}
+                                <option value="{{id}}">{{descripcion}}</option>
+                            {{/dificultadesIncorrectas}}
+                        </select>
+
+                        <select  class="flex flex-1 h-[32.88px] lg:h-[47px] rounded-xl p-2 outline-0 bg-[#252121] bg-opacity-80 bg-" name="opcionCorrecta" required>
+                        {{#opcionCorrecta}}
+                            <option value="{{id}}" selected>Opcion {{id}}</option>
+                        {{/opcionCorrecta}}
+
+                            {{#opcionesIncorrectas}}
+                               <option value="{{id}}">Opcion {{id}}</option>
+                           {{/opcionesIncorrectas}}
+
+                        </select>
+                    </div>
+                </div>
+                <div class="my-2 lg:my-6 flex justify-center items-end">
+                    <a class="w-[159px] h-[40px] rounded-2xl bg-[#252121] bg-opacity-80 font-normal text-[12px] lg:text-[16px] uppercase flex justify-center items-center"
+                             href="/editor/editarPreguntas">Volver
+                    </a>
+                    <button class="w-[159px] h-[40px] rounded-2xl bg-[#252121] bg-opacity-80 font-normal text-[12px] lg:text-[16px] uppercase"
+                            type="submit" name="modificar">Modificar
+                    </button>
+                </div>
+
+            </div>
+
+
+        </form>
+    </div>
+
+
+
+</main>
+{{> footer}}

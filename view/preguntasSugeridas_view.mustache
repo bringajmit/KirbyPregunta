@@ -1,0 +1,46 @@
+{{>headerLogin}}
+
+<main class="h-[100vh] flex items-center justify-center my-6">
+
+    <div class="relative bg-[#1C1919] bg-opacity-80 mx-auto rounded-2xl md:w-[1282px] h-auto  w-[333px] flex flex-col ">
+        <div class="flex justify-center items-start">
+            <p class="mt-9 text-white text-[15px] lg:text-[20px] tracking-[0.12em] text-bold uppercase">Preguntas
+                sugeridas</p>
+        </div>
+    <div class="overflow-y-scroll overflow-x-scroll scrollbar">
+        <table class=" bg-[#252121] bg-opacity-80 rounded-l-2xl w-[90%] mx-auto text-center  rounded-3xl border-collapse border-separate mt-12 p-5 mb-6 ">
+        <tr class="">
+            <th class="text-white text-[12px] font-semibold md:text-[15px] p-2">Pregunta</th>
+            <th class="text-white text-[12px] font-semibold md:text-[15px] p-2">Opciones</th>
+            <th class="text-white text-[12px] font-semibold md:text-[15px] p-2">Es correcta</th>
+            <th class="text-white text-[12px] font-semibold md:text-[15px] p-2">Categorias</th>
+            <th class="text-white text-[12px] font-semibold md:text-[15px] p-2">Aceptado</th>
+            <th class="text-white text-[12px] font-semibold md:text-[15px] p-2">Rechazado</th>
+            {{#preguntasSugeridas}}</tr>
+                <tr class="">
+                    <td class="text-white text-[12px] md:text-[15px] p-2">{{pregunta}}</td>
+                    <td class="text-white text-[12px] md:text-[15px] p-2">{{{datos_opcion}}}</td>
+                    <td class="text-white text-[12px] md:text-[15px] p-2">{{correcta}}</td>
+                    <td class="text-white text-[12px] md:text-[15px] p-2">{{categoria}}</td>
+                    <td class="text-white text-[12px] md:text-[15px] p-2">
+                        <form action="/pregunta/preguntasSugeridas" method="post">
+                            <button name="aceptarPregunta" value="{{id}}">Aceptar</button>
+                        </form>
+                    </td>
+                    <td class="text-white text-[12px] md:text-[15px] p-2">
+                        <form action="/pregunta/preguntasSugeridas" method="post">
+                            <button name="rechazarPregunta" value="{{id}}">Rechazar</button>
+                        </form>
+                    </td>
+                </tr>
+            {{/preguntasSugeridas}}
+        </table>
+    </div>
+    <img src="/public/img/historial.png" alt="historial"
+         class="absolute w-[50px] h-[46px] lg:w-[90px] lg:h-[80px] bottom-0 right-0">
+</div>
+
+</main>
+
+
+{{>footer}}

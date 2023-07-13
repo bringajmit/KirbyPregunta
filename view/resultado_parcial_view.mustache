@@ -1,0 +1,20 @@
+{{>header}}
+<main class="h-[100vh] flex items-center justify-center">
+    <div class="relative bg-[#1C1919] bg-opacity-80 rounded-2xl md:w-[982px] w-[382px] flex justify-center items-center flex-col gap-y-14 m-4 py-12 px-4 ">
+
+        <div class="bg-[#1C1919] bg-opacity-80 rounded-2xl lg:w-[782px] p-6 w-auto flex justify-around items-center">
+           <p class="text-white text-[15px] md:text-3xl text-center">Felicidades {{usernameRetador}}, conseguiste {{#puntajes}}{{puntajeRetador}}{{/puntajes}} puntos</p>
+        </div>
+        <div class="bg-[#1C1919] bg-opacity-80 rounded-2xl lg:w-[782px] p-6 w-auto flex justify-around items-center">
+           <p class="text-white text-[15px] md:text-3xl text-center">Debes esperar a que {{usernameRival}} acepte</p>
+        </div>
+
+        <div class="bg-[#1C1919] bg-opacity-80 py-2 md:py-4 px-4 rounded-2xl flex justify-center items-center">
+            <a href="/user/lobby">
+                <img class="max-w-[100%]" src="/public/img/home.png">
+            </a>
+        </div>
+    </div>
+</main>
+
+{{>footer}}

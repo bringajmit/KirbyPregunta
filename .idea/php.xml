@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MessDetectorOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PHPCSFixerOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PHPCodeSnifferOptionsConfiguration">
+    <option name="highlightLevel" value="WARNING" />
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/php-parallel-lint/php-console-color" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/php-parallel-lint/php-console-highlighter" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/php-parallel-lint/php-parallel-lint" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/composer" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/yoast/phpunit-polyfills" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/phpcompatibility/php-compatibility" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/dealerdirect/phpcodesniffer-composer-installer" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/squizlabs/php_codesniffer" />
+      <path value="$PROJECT_DIR$/PHPMailer-master/vendor/doctrine/lexer" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.0">
+    <option name="suggestChangeDefaultLanguageLevel" value="false" />
+  </component>
+  <component name="PhpStanOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PsalmOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+</project>

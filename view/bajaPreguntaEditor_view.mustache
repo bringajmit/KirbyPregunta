@@ -1,0 +1,48 @@
+{{>headerLogin}}
+
+<main class="h-[100vh] flex items-center justify-center my-6">
+
+    <div class="relative bg-[#1C1919] bg-opacity-80 mx-auto rounded-2xl md:w-[682px] h-full  w-[333px] flex flex-col items-center justify-center p-6 ">
+        <div class="flex justify-center items-start">
+            <p class="text-white text-[15px] lg:text-[20px] tracking-[0.12em] text-bold uppercase">Eliminar pregunta
+                partidas</p>
+        </div>
+
+        <div class="overflow-y-scroll scrollbar w-full">
+            <table class="bg-[#252121] bg-opacity-80 text-center p-4 m-4 ">
+                <tr class="">
+                    <th class="text-white text-[12px] font-semibold md:text-[15px] p-2">ID</th>
+                    <th class="text-white text-[12px] font-semibold md:text-[15px] p-2">Pregunta</th>
+                </tr>
+                {{#preguntas}}
+
+                    <tr class="">
+                        <td class="text-white text-[12px] md:text-[15px] p-2">{{id}}</td>
+                        <td class="text-white text-[12px] md:text-[15px] p-2">{{descripcion}}</td>
+                        <td>
+                            <form method="post" action=" /editor/editarPreguntas">
+                                <button class="w-[70px] h-[30px] md:w-[159px] md:h-[40px] text-white rounded-2xl bg-[#252121] bg-opacity-80 font-normal text-[12px] lg:text-[16px] uppercase"
+                                        name="eliminarPregunta" value="{{id}}">Eliminar
+                                </button>
+                            </form>
+                        </td>
+                        <td>
+                            <form method="post" action="/editor/modificarPregunta">
+                                <button class="w-[70px] h-[30px] md:w-[159px] md:h-[40px] text-white rounded-2xl bg-[#252121] bg-opacity-80 font-normal text-[12px] lg:text-[16px] uppercase"
+                                        name="modificarPregunta" value="{{id}}">Modificar
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                {{/preguntas}}
+            </table>
+        </div>
+
+        <img src="/public/img/historial.png"
+             class="absolute w-[70px] h-[66px] lg:w-[90px] lg:h-[80px] bottom-0 -right-4">
+    </div>
+
+</main>
+
+
+{{>footer}}
