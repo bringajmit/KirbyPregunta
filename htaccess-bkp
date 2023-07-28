@@ -5,28 +5,41 @@ Options -Indexes
 </FilesMatch>
 
 <IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteBase /
-    RewriteRule ^(public)($|/) - [L,NC]
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)/(.*)/(.*)$ index.php?module=$1&action=$2&$3 [L,QSA]
-    RewriteRule ^(.*)/(.*)$ index.php?module=$1&action=$2 [L,QSA]
-    RewriteRule ^(.*)$ index.php?controller=$1 [L,QSA]
+   # RewriteEngine On
+    #RewriteBase /
+    #RewriteRule ^(public)($|/) - [L,NC]
+    #RewriteCond %{REQUEST_FILENAME} !-f
+    #RewriteCond %{REQUEST_FILENAME} !-d
+    #RewriteRule ^(.*)/(.*)/(.*)$ index.php?module=$1&action=$2&$3 [L,QSA]
+    #RewriteRule ^(.*)/(.*)$ index.php?module=$1&action=$2 [L,QSA]
+    #RewriteRule ^(.*)$ index.php?controller=$1 [L,QSA]
+#________________________________________________________
 
-    # Redireccionar /home a /
-    RewriteRule ^/home$ / [L,R=301]
+RewriteEngine On
+RewriteBase /
 
-    # Redireccionar /blog/my-post.php a /blog/my-post
-    RewriteRule ^/blog/my-post.php$ /blog/my-post [L,R=301]
+# Redireccionar /home a /
+RewriteRule ^home$ / [L,R=301]
 
-    # Redireccionar /news a /blog
-    RewriteRule ^/news$ /blog [L,R=301]
+# Redireccionar /blog/my-post.php a /blog/my-post
+RewriteRule ^blog/my-post.php$ /blog/my-post [L,R=301]
 
-    # Redireccionar /cuties a https://www.petsofnetlify.com
-    RewriteRule ^/cuties$ https://www.petsofnetlify.com [L,R=301]
+# Redireccionar /news a /blog
+RewriteRule ^news$ /blog [L,R=301]
 
-    # Redireccionar /authors/c%C3%A9line a /authors/about-c%C3%A9line
-    RewriteRule ^/authors/c%C3%A9line$ /authors/about-c%C3%A9line [L,R=301]
+# Redireccionar /cuties a https://www.petsofnetlify.com
+RewriteRule ^cuties$ https://www.petsofnetlify.com [L,R=301]
+
+# Redireccionar /authors/c%C3%A9line a /authors/about-c%C3%A9line
+RewriteRule ^authors/c%C3%A9line$ /authors/about-c%C3%A9line [L,R=301]
+
+# Resto de las reglas de reescritura
+RewriteRule ^(public)($|/) - [L,NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/(.*)/(.*)$ index.php?module=$1&action=$2&$3 [L,QSA]
+RewriteRule ^(.*)/(.*)$ index.php?module=$1&action=$2 [L,QSA]
+RewriteRule ^(.*)$ index.php?controller=$1 [L,QSA]
+
 
 </IfModule>
