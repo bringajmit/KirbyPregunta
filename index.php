@@ -23,6 +23,7 @@ if(isset($_SESSION["idRol"])){
         exit();
     }
 }
+
 //Rol Administrador
 if(isset($_SESSION["idRol"])){
     if($_SESSION["idRol"]!=1 && ($method == 'jugadores' ||
