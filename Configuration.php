@@ -9,8 +9,7 @@ include_once ("./controller/HistorialController.php");
 include_once ("./controller/AdminController.php");
 include_once ("./controller/PDFController.php");
 include_once ("./controller/TimeController.php");
-include_once ("_redirects.txt");
-include_once ("netlify.toml");
+
 
 include_once ("./model/UserModel.php");
 include_once ("./model/DueloModel.php");
